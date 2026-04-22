@@ -1,0 +1,8 @@
+{
+  "name": "Tanishq",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite",
+  "id": "b1faf6d5"
+}
