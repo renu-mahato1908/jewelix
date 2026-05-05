@@ -33,6 +33,22 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Home from './components/Home';
+import Test from './components/Test';
+import Example from './components/Example';
+// import Register from './components/Register';
+// import Login from './components/Login';
+import AddProduct from './components/AddProduct';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import AddCategory from './components/AddCategory';
+import Gold from './components/Gold';
+import Diamond from './components/Diamond';
+import Mangalsutra from './components/Mangalsutra';
+import Bangles from './components/Bangles';
+import Pendant from './components/Pendant';
+import Earrings from './components/Earrings';
+// import Dashboard from './components/Dashboard';
 
 setupIonicReact();
 
@@ -49,6 +65,72 @@ const App: React.FC = () => {
             <Route path="/folder/:name" exact={true}>
               <Page />
             </Route>
+
+            <Route path="/Home" exact={true}>
+              <Home />
+            </Route>
+
+            <Route path="/Test" exact={true}>
+              <Test />
+            </Route>
+
+            <Route path="/Example" exact={true}>
+              <Example />
+            </Route>
+
+
+
+
+
+
+
+            <Route path="/AddProduct" exact={true}>
+              <AddProduct />
+            </Route>
+
+
+            <Route path="/SignIn" exact={true}>
+              <SignIn />
+            </Route>
+
+            <Route path="/SignUp" exact={true}>
+              <SignUp />
+            </Route>
+
+            <Route path="/AddCategory" exact={true}>
+              <AddCategory />
+            </Route>
+
+
+            <Route path="/Gold" exact={true}>
+              <Gold />
+            </Route>
+
+            <Route path="/Diamond" exact={true}>
+              <Diamond />
+            </Route>
+
+            <Route path="/Bangles" exact={true}>
+              <Bangles />
+            </Route>
+
+            <Route path="/Mangalsutra" exact={true}>
+              <Mangalsutra />
+            </Route>
+
+
+            <Route path="/Pendant" exact={true}>
+              <Pendant />
+            </Route>
+
+            <Route path="/Earrings" exact={true}>
+              <Earrings />
+            </Route>
+
+             {/* <Route path="/Dashboard" exact={true}>
+              <Dashboard />
+            </Route> */}
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

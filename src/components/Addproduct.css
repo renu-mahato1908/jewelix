@@ -1,0 +1,80 @@
+.addproduct-content {
+  --background: linear-gradient(to bottom, #ffffff, #f9f6f1);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: #b8962e;
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.custom-input {
+  --background: #fafafa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+}
+
+.custom-input:focus-within {
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 6px rgba(212,175,55,0.4);
+}
+
+/* Error */
+.error {
+  color: red;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+/* Label */
+.section-label {
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+/* Radio */
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-item {
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* Upload */
+.upload-box {
+  border: 2px dashed #d4af37;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Button */
+.gold-btn {
+  margin-top: 20px;
+  --background: linear-gradient(135deg, #d4af37, #b8962e);
+  --border-radius: 25px;
+  font-weight: 600;
+}
