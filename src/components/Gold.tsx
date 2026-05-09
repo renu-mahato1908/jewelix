@@ -14,18 +14,18 @@ import "./AllCategory.css";
 const Gold: React.FC = () => {
   return (
     <IonPage>
-        
-                    <IonHeader>
-                        <IonToolbar className="header-toolbar">
-        
-                            <div className="logo">
-                                <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
-                            </div>
-        
-                            
-        
-                        </IonToolbar>
-                    </IonHeader>
+
+      <IonHeader>
+        <IonToolbar className="header-toolbar">
+
+          <div className="logo">
+            <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
+          </div>
+
+
+
+        </IonToolbar>
+      </IonHeader>
       <IonContent>
 
         <IonGrid>

@@ -57,7 +57,7 @@
   --text-align: center;
   --background: brown;
   width: 150px;
-   margin: 20px auto;
+  margin: 20px auto;
   border-radius: 12px;
   color: white;
 }
@@ -78,4 +78,180 @@
 
 .msg {
   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* VIEWPRODUCT */
+
+/* ================= PAGE ================= */
+
+ion-content {
+  --background: #f8f8f8;
+}
+
+
+/* ================= IMAGE SECTION ================= */
+
+.product-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 420px;
+  height: 480px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+  background: #fff;
+}
+
+
+/* ================= WISHLIST BUTTON ================= */
+
+.wishlist-btn {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 58px;
+  height: 58px;
+
+  --border-radius: 50%;
+
+  --background: rgba(255, 255, 255, 0.95);
+
+  --color: #ff1744;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  z-index: 100;
+
+  transition: 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.wishlist-btn svg {
+  font-size: 32px;
+}
+
+
+/* ================= DETAILS CARD ================= */
+
+.details-card {
+  border-radius: 24px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  background: #ffffff;
+
+  padding: 10px;
+}
+
+
+/* ================= PRODUCT TEXT ================= */
+
+.product-name {
+  font-size: 30px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 14px;
+}
+
+.product-price {
+  font-size: 34px;
+
+  font-weight: bold;
+
+  color: #c79a00;
+
+  margin-bottom: 20px;
+}
+
+.product-details {
+  font-size: 16px;
+
+  color: #555;
+
+  line-height: 1.8;
+}
+
+
+/* ================= BUTTON ================= */
+
+.cart-btn {
+  margin-top: 28px;
+
+  height: 50px;
+
+  --border-radius: 14px;
+
+  --background: linear-gradient(135deg,
+      #d4af37,
+      #f7d774);
+
+  --color: #000;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+.cart-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media screen and (max-width: 768px) {
+
+  .product-image {
+    height: 340px;
+  }
+
+  .product-name {
+    font-size: 24px;
+  }
+
+  .product-price {
+    font-size: 28px;
+  }
+
 }

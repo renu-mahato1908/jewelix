@@ -1,0 +1,117 @@
+
+
+ion-content {
+    --background: #f6f6f6;
+}
+
+/* ================= CARD ================= */
+
+ion-card {
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    border: none;
+    overflow: hidden;
+}
+
+/* ================= HEADING ================= */
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 25px;
+    --text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ================= INPUT SECTION ================= */
+
+ion-item {
+    --background: #ffffff;
+    --border-color: #e0e0e0;
+    --highlight-color-focused: #c89b3c;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+}
+
+ion-label {
+    font-weight: 600;
+    color: #444;
+}
+
+ion-input {
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    font-size: 15px;
+}
+
+/* ================= RADIO SECTION ================= */
+
+.radio-section {
+    margin-top: 20px;
+}
+
+.radio-section ion-item {
+    margin-bottom: 8px;
+    --background: transparent;
+    box-shadow: none;
+}
+
+/* ================= BUTTON ================= */
+
+ion-button {
+    --background: linear-gradient(135deg, #c89b3c, #f0d28b);
+    --color: #111;
+    --border-radius: 14px;
+    height: 48px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 15px;
+}
+
+ion-button[color="success"] {
+    --background: linear-gradient(135deg, #1fa750, #45d67b);
+    --color: #fff;
+}
+
+/* ================= ERROR TEXT ================= */
+
+ion-text[color="danger"] {
+    display: block;
+    margin-left: 12px;
+    margin-top: -10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ================= ADDRESS SELECT CARD ================= */
+
+ion-item h3 {
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+ion-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ================= BADGE ================= */
+
+ion-badge {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* ================= SPINNER ================= */
+
+ion-spinner {
+    transform: scale(1.2);
+}

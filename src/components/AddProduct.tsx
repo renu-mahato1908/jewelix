@@ -315,7 +315,10 @@ import "./AddProduct.css";
 const AddProduct: React.FC = () => {
   const history = useHistory();
 
-  const [categories, setCategories] = useState<any[]>([]);
+  // const [categories, setCategories] = useState<any[]>([]);
+
+    const [categories, setCategories] = useState([]);
+
   const [selectedImages, setSelectedImages] = useState<FileList | null>(null);
 
   const { user: currentUser } = useSelector((state: any) => state.auth);

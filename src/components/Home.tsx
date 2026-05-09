@@ -1,8 +1,5 @@
 
-
-
-
-
+import React, { useEffect } from "react";
 
 import {
     IonButtons,
@@ -20,86 +17,85 @@ import {
 } from '@ionic/react';
 
 import './Home.css';
-import { logOutOutline } from "ionicons/icons";
-import { IonIcon } from "@ionic/react";
-import { diamondOutline } from "ionicons/icons";
 
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector, } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logout } from "../Slices/auth";
+import { heartOutline, heart } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react'
+import { cartOutline, cart } from 'ionicons/icons';
+import { personOutline, person, peopleOutline } from 'ionicons/icons';
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
 
-    const slides = [
-        { id: "1", image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwb84a9317/homepage/HeroBanner/mriganka-wo-desktop.jpg" },
-        { id: "2", image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwa85a00d2/homepage/HeroBanner/festive-edit-desktop.jpg" },
-        { id: "3", image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw32e1f8d0/homepage/HeroBanner/floral-bloom-desktop.jpg" },
-        { id: "4", image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwd8ef7708/homepage/HeroBanner/mriganka-wo-desktop-new.jpg" },
-        { id: "5", image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwb3ca7843/homepage/HeroBanner/dailywear-desktop1.jpg" }
-    ];
-
-    const slideOpts = {
-        initialSlide: 0,
-        speed: 400,
-        autoplay: {
-            delay: 2000
-        }
-    };
-
-
-
+    const history = useHistory();
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    const { user: currentUser } = useSelector((state) => state.auth);
+    useEffect(() => {
+        if (currentUser) {
+            console.log(currentUser);
+        }
+        if (currentUser && currentUser.roles[0] === "ROLE_ADMIN") {
+            console.log(currentUser.roles[0]);
+
+            history.replace("/Dashboard");
+        }
+    }, [currentUser, history]);
+
+
+
+
+
+    // const dispatch = useDispatch();
+    // const history = useHistory();
 
     const handleLogout = () => {
         dispatch(logout());          // Redux state clear
-        localStorage.removeItem("user"); // user/token remove
+        localStorage.removeItem("user");
         history.replace("/SignIn");   // redirect to login page
     };
 
+
+
+
+
+
+
+
     return (
         <IonPage>
-            {/* <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
-                    <IonTitle>Home</IonTitle>
-                </IonToolbar>
-            </IonHeader> */}
-
-            {/* <IonHeader>
-                <IonToolbar className="header-toolbar">
-
-                   
-
-                    <IonTitle className="header-title">Jewellery</IonTitle>
-
-
-                    <IonButton className="logout-btn" >
-                        <IonIcon icon={logOutOutline} />
-                    </IonButton>
-
-
-
-
-                </IonToolbar>
-            </IonHeader> */}
 
 
             <IonHeader>
                 <IonToolbar className="header-toolbar">
+
+                    <IonButtons slot="start">
+                        <IonMenuButton />
+                    </IonButtons>
 
                     <div className="logo">
                         <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
                     </div>
 
                     <IonButtons slot="end">
+
+
+                        <Link to={"./Wishlist"}><IonIcon icon={heartOutline} /></Link>
+
+                        <Link to={"./Cart"}> <IonIcon icon={cartOutline} /></Link>
+
+                        <Link to={"./Account"}> <IonIcon icon={personOutline} /></Link>
+
                         <IonButton onClick={handleLogout} className="logout-btn">
                             Logout
                         </IonButton>
+
                     </IonButtons>
+
+
 
                 </IonToolbar>
             </IonHeader>
@@ -110,17 +106,7 @@ const Home: React.FC = () => {
                     <IonRow>
                         <IonCol className='collection'>
 
-                            {/* <div className="slidearea">
-                                <IonSlides options={slideOpts}>
-                                    {
-                                        slides.map((slide) => (
-                                            <IonSlide key={slide.id}>
-                                                <img src={slide.image} className="slider-img" alt="" />
-                                            </IonSlide>
-                                        ))
-                                    }
-                                </IonSlides>
-                            </div> */}
+
 
                             <h3> Tanishq Collection</h3>
                             <h4>Explore our Newly launched collection</h4>

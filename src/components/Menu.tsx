@@ -80,8 +80,6 @@ interface AppPage {
 //   }
 // ];
 
-
-
 const appPages = [
   {
     title: 'Home',
@@ -90,27 +88,35 @@ const appPages = [
   },
   {
     title: 'Gold',
-    url: '/Gold',
+    url: '/Category/Gold',
     icon: GiGoldBar
   },
   {
     title: 'Diamond',
-    url: '/Diamond',
+    url: '/Category/Diamond',
     icon: GiDiamondRing
   },
+
   {
     title: 'Pendant',
-    url: '/Pendant',
+    url: '/Category/Pendant',
     icon: GiNecklaceDisplay
   },
+
+  {
+    title: 'Mangalsutra',
+    url: '/Category/Mangalsutra',
+    icon: GiNecklaceDisplay
+  },
+
   {
     title: 'Earrings',
-    url: '/Earrings',
+    url: '/Category/Earrings',
     icon: FaGem
   },
   {
     title: 'Bangles',
-    url: '/Bangles',
+    url: '/Category/Bangles',
     icon: BsCircle
   }
 ];
@@ -128,8 +134,12 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>@jewellery.com</IonNote>
+          <IonListHeader>
+            {/* <div className="logo"> */}
+              <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
+            {/* </div> */}
+          </IonListHeader>
+          {/* <IonNote>@jewellery.com</IonNote> */}
           {appPages.map((appPage, index) => {
             return (
               // <IonMenuToggle key={index} autoHide={false}>

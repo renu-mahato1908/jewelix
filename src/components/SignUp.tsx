@@ -213,7 +213,7 @@ import { register } from "../Slices/auth";
 import { clearMessage } from "../Slices/message";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./Signin.css"; 
+import "./Signin.css";
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string().min(2).max(50).required("Required"),
@@ -251,7 +251,7 @@ const SignUp: React.FC = () => {
           <IonTitle className="header-title">
 
             <div className="logo">
-              <img src="" className="logo"/>
+              <img src="" className="logo" />
             </div>
           </IonTitle>
         </IonToolbar>
