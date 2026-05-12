@@ -1,3 +1,5 @@
+
+import Header from "../components/Header";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -185,9 +187,16 @@ const ViewProduct = () => {
 
   };
 
+
+  const handleLogout = () => {
+    localStorage.clear();
+  };
+
   return (
 
     <IonPage>
+      <Header handleLogout={handleLogout} />
+
 
       <IonContent className="ion-padding">
 

@@ -375,58 +375,41 @@
 
 
 
-.header-toolbar {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-}
 
-/* Logo Left Side */
-.header-center {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 1;
-}
 
-.logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
 
-/* Right Side Icons */
 .header-icons {
   display: flex;
   align-items: center;
-  gap: 22px;
 }
 
-/* Icon Size Bigger */
 .icon-box {
-  position: relative;
-  font-size: 30px;
-  color: #222;
-  cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  margin-left: 12px;
 }
 
-/* Badge Styling */
-.icon-box ion-badge {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  font-size: 11px;
-  min-width: 18px;
-  height: 18px;
-  border-radius: 50%;
+.icon-box a {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  text-decoration: none;
 }
 
-/* Logout Icon */
-.logout-icon {
-  color: brown;
+.icon-box ion-icon {
+  font-size: 24px;
+  color: black;
+}
+
+.icon-box ion-badge {
+  margin-top: 5px;
+
+  font-size: 10px;
+
+  --padding-start: 6px;
+  --padding-end: 6px;
 }

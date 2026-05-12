@@ -17,7 +17,9 @@ import {
   IonHeader,
   IonToolbar,
   IonTitle,
-  IonSpinner
+  IonSpinner,
+  IonButtons,
+  IonMenuButton
 } from "@ionic/react";
 
 import {
@@ -50,6 +52,30 @@ import {
 import { Bar } from "react-chartjs-2";
 
 // import "./Dashboard.css";
+
+interface Reportsummary {
+  totalRevenue: number;
+}
+
+interface DailyReport {
+  date: string;
+  totalOrders: number;
+}
+
+interface topProduct {
+  productDetails: number;
+  totalSold: number;
+
+}
+
+interface chartData {
+  labels: string[];
+  datasets: string[];
+}
+
+
+
+
 
 ChartJS.register(
   CategoryScale,
@@ -94,10 +120,10 @@ const Dashboard: React.FC = () => {
   const { user: currentUser } = useSelector((state: any) => state.auth);
 
   const [totalOrders, setTotalOrders] = useState(0);
-  const [reportSummary, setReportSummary] = useState<any>(null);
-  const [chartData, setChartData] = useState<any>(null);
-  const [topProducts, setTopProducts] = useState<any[]>([]);
-  const [dailyReports, setDailyReports] = useState<any>(null);
+  const [reportSummary, setReportSummary] = useState<Reportsummary>();
+  const [chartData, setChartData] = useState<chartData[]>([]);
+  const [topProducts, setTopProducts] = useState<topProduct[]>([]);
+  const [dailyReports, setDailyReports] = useState<DailyReport>();
 
   useEffect(() => {
 
@@ -186,12 +212,17 @@ const Dashboard: React.FC = () => {
 
     <IonPage>
 
-      
+
 
       <Header handleLogout={handleLogout} />
 
       <IonHeader>
         <IonToolbar color="blue">
+
+
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
           <IonTitle>Admin Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -461,4 +492,4 @@ export default Dashboard;
 //   );
 // };
 
-// export default Dashboard;
+//export default Dashboard;

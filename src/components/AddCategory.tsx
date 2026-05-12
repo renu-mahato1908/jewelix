@@ -155,7 +155,7 @@ const AddCategory: React.FC = () => {
 
 
 
-               
+
 
 
 
@@ -180,7 +180,7 @@ const AddCategory: React.FC = () => {
                                         className="delete-btn"
                                         onClick={() => handleDelete(category.id)}
                                     >
-                                          <IonIcon icon={trashOutline} slot="icon-only" />
+                                        <IonIcon icon={trashOutline} slot="icon-only" />
 
                                     </IonButton>
                                 </IonCol>

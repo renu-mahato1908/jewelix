@@ -249,25 +249,7 @@ const Category = () => {
 
         <IonPage>
 
-            {/* <IonHeader>
-                <IonToolbar className="header-toolbar">
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
-
-
-                    <div className="logo">
-                        <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
-                    </div>
-
-                    <IonButtons slot="end">
-                        <IonButton onClick={handleLogout} className="logout-btn">
-                            Logout
-                        </IonButton>
-                    </IonButtons>
-
-                </IonToolbar>
-            </IonHeader> */}
+          
 
                   <Header handleLogout={handleLogout} />
 
@@ -463,10 +445,12 @@ const Category = () => {
 
                                             <div className="image-container">
 
+                                              <Link to={`/ViewProduct/${product?.id}`}>
                                                 <IonImg
                                                     className="category-image"
                                                     src={`http://localhost:8090/upload/${product?.images?.[0]}`}
                                                 />
+                                              </Link>
 
                                                 <IonButton
                                                     className="wishlist-btn"
@@ -493,7 +477,7 @@ const Category = () => {
                                                     Add To Cart
                                                 </IonButton>
 
-                                                <Link to={`/ViewProduct/${product?.id}`}>
+                                                {/* <Link to={`/ViewProduct/${product?.id}`}>
 
                                                     <IonButton
                                                         expand="block"
@@ -502,7 +486,7 @@ const Category = () => {
                                                         View Product
                                                     </IonButton>
 
-                                                </Link>
+                                                </Link> */}
 
                                             </IonCardContent>
 
