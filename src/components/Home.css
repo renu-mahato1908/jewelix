@@ -344,9 +344,9 @@
 
   .social_media {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     align-items: center;
-    gap: 12px;                 
+    gap: 12px;
     padding: 0;
   }
 
@@ -368,45 +368,65 @@
 
 
 
+
+
+
 /* header */
 
 
+
 .header-toolbar {
-  --background: #fff;
-  text-align: right;
-  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 
-/* Center container */
+/* Logo Left Side */
 .header-center {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Right Side Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Icon Size Bigger */
+.icon-box {
+  position: relative;
+  font-size: 30px;
+  color: #222;
+  cursor: pointer;
+  display: flex;
   align-items: center;
 }
 
-/* Title */
-.header-title {
-  color: #b8962e;
-  font-weight: 600;
+/* Badge Styling */
+.icon-box ion-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  font-size: 11px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Logout button */
-.logout-btn {
-  margin-top: 5px;
-  --background: transparent;
-  color: hsl(339, 83%, 29%);
-  /* border: 1px solid #d4af37; */
-  /* border-radius: 20px; */
-  font-size: 10px;
-  width: 50px;
-  height: 40px;
-  padding-bottom: 5px;
-}
-
-
-.logo {
-  height: 125px;   /* size reduce */
-  width: auto;    /* proportion maintain */
-  object-fit: contain;
-  text-align: left;
+/* Logout Icon */
+.logout-icon {
+  color: brown;
 }

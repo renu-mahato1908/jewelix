@@ -1,4 +1,5 @@
 
+ import Header from "../components/Header";
 
 
 import axios from 'axios';
@@ -239,11 +240,16 @@ const Category = () => {
         history.replace("/SignIn");   // redirect to login page
     };
 
+//     const handleLogout = () => {
+//     localStorage.clear();
+//   };
+
+
     return (
 
         <IonPage>
 
-            <IonHeader>
+            {/* <IonHeader>
                 <IonToolbar className="header-toolbar">
                     <IonButtons slot="start">
                         <IonMenuButton />
@@ -261,7 +267,10 @@ const Category = () => {
                     </IonButtons>
 
                 </IonToolbar>
-            </IonHeader>
+            </IonHeader> */}
+
+                  <Header handleLogout={handleLogout} />
+
 
             <IonContent className="ion-padding">
 

@@ -114,6 +114,12 @@ const appPages = [
     url: '/Category/Earrings',
     icon: FaGem
   },
+
+  {
+    title: 'Rings',
+    url: '/Category/Rings',
+    icon: FaGem
+  },
   {
     title: 'Bangles',
     url: '/Category/Bangles',

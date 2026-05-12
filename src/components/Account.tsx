@@ -1,3 +1,5 @@
+import Header from "../components/Header";
+
 import React, { useEffect } from "react";
 import {
   IonPage,
@@ -34,17 +36,25 @@ const Account: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(logout());          // Redux state clear
-    localStorage.removeItem("user");
-    history.replace("/SignIn");   // redirect to login page
-  };
+  // const handleLogout = () => {
+  //   dispatch(logout());          // Redux state clear
+  //   localStorage.removeItem("user");
+  //   history.replace("/SignIn");   // redirect to login page
+  // };
+
+   const handleLogout = () => {
+        localStorage.clear();
+    };
 
 
   return (
     <IonPage>
 
-      <IonHeader>
+
+        <Header handleLogout={handleLogout} />
+
+
+      {/* <IonHeader>
         <IonToolbar className="header-toolbar">
           <IonButtons slot="start">
             <IonMenuButton />
@@ -62,7 +72,7 @@ const Account: React.FC = () => {
           </IonButtons>
 
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
 
       <IonContent className="ion-padding account-page">
         <IonGrid>

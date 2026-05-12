@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 
 import React, { useEffect } from "react";
 
@@ -12,7 +13,11 @@ import {
     IonPage,
     IonTitle,
     IonToolbar,
-    IonButton
+    IonButton,
+    IonTabBar,
+    IonTabButton,
+    IonLabel,
+    IonBadge
 
 } from '@ionic/react';
 
@@ -25,8 +30,9 @@ import { logout } from "../Slices/auth";
 import { heartOutline, heart } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react'
 import { cartOutline, cart } from 'ionicons/icons';
-import { personOutline, person, peopleOutline } from 'ionicons/icons';
+import { personOutline, person, peopleOutline, logOutOutline } from 'ionicons/icons';
 import { Link } from "react-router-dom";
+import { calendar, musicalNote } from 'ionicons/icons';
 
 const Home: React.FC = () => {
 
@@ -52,10 +58,15 @@ const Home: React.FC = () => {
     // const dispatch = useDispatch();
     // const history = useHistory();
 
+    // const handleLogout = () => {
+    //     dispatch(logout());          // Redux state clear
+    //     localStorage.removeItem("user");
+    //     history.replace("/SignIn");   // redirect to login page
+    // };
+
+
     const handleLogout = () => {
-        dispatch(logout());          // Redux state clear
-        localStorage.removeItem("user");
-        history.replace("/SignIn");   // redirect to login page
+        localStorage.clear();
     };
 
 
@@ -69,36 +80,11 @@ const Home: React.FC = () => {
         <IonPage>
 
 
-            <IonHeader>
-                <IonToolbar className="header-toolbar">
-
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
-
-                    <div className="logo">
-                        <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
-                    </div>
-
-                    <IonButtons slot="end">
 
 
-                        <Link to={"./Wishlist"}><IonIcon icon={heartOutline} /></Link>
+            
 
-                        <Link to={"./Cart"}> <IonIcon icon={cartOutline} /></Link>
-
-                        <Link to={"./Account"}> <IonIcon icon={personOutline} /></Link>
-
-                        <IonButton onClick={handleLogout} className="logout-btn">
-                            Logout
-                        </IonButton>
-
-                    </IonButtons>
-
-
-
-                </IonToolbar>
-            </IonHeader>
+            <Header handleLogout={handleLogout} />
 
             <IonContent fullscreen>
 

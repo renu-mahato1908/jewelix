@@ -56,6 +56,10 @@ import Address from './components/Address';
 import Dashboard from './components/Dashboard';
 import Account from './components/Account';
 import Order from './components/Order';
+import Products from './components/Products';
+import OrdersDetail from './components/OrderDetail';
+import OrderStatus from './components/OrderStatus';
+import Rings from './components/Rings';
 // import Dashboard from './components/Dashboard';
 
 setupIonicReact();
@@ -130,6 +134,10 @@ const App: React.FC = () => {
               <Earrings />
             </Route>
 
+            <Route path="/Rings" exact={true}>
+              <Rings />
+            </Route>
+
             <Route path="/Mangalsutra" exact={true}>
               <Mangalsutra />
             </Route>
@@ -143,11 +151,11 @@ const App: React.FC = () => {
             </Route>
 
 
-             <Route path="/ViewProduct/:productId" exact={true}>
+            <Route path="/ViewProduct/:productId" exact={true}>
               <ViewProduct />
             </Route>
 
-             <Route path="/Cart" exact={true}>
+            <Route path="/Cart" exact={true}>
               <Cart />
             </Route>
 
@@ -156,7 +164,7 @@ const App: React.FC = () => {
               <Wishlist />
             </Route>
 
-             <Route path="/Address" exact={true}>
+            <Route path="/Address" exact={true}>
               <Address />
             </Route>
 
@@ -165,8 +173,22 @@ const App: React.FC = () => {
               <Account />
             </Route>
 
-             <Route path="/Order" exact={true}>
+            <Route path="/Order" exact={true}>
               <Order />
+            </Route>
+
+            <Route path="/OrdersDetail" exact={true}>
+              <OrdersDetail />
+            </Route>
+
+
+            <Route path="/OrderStatus" exact={true}>
+              <OrderStatus />
+            </Route>
+
+
+            <Route path="/Products" exact={true}>
+              <Products />
             </Route>
 
           </IonRouterOutlet>

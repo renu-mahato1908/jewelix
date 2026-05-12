@@ -1,3 +1,5 @@
+import Header from "../components/Header";
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
@@ -17,12 +19,21 @@ import {
     IonText,
     IonToast,
     IonSpinner,
-    IonIcon
+
+    IonButtons,
+    IonMenuButton
 } from '@ionic/react';
 
 import { trash, cart } from 'ionicons/icons';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch, } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import { heartOutline, heart } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react'
+import { cartOutline, } from 'ionicons/icons';
+import { personOutline, person, peopleOutline } from 'ionicons/icons';
+import { Link } from "react-router-dom";
 
 interface WishlistProduct {
     _id: string;
@@ -147,16 +158,37 @@ const Wishlist: React.FC = () => {
 
             });
     };
+    const history = useHistory();
+
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());          // Redux state clear
+        localStorage.removeItem("user");
+        history.replace("/SignIn");   // redirect to login page
+    };
+
+
+    
 
     return (
 
         <IonPage>
+            <Header handleLogout={handleLogout} />
+
 
             {/* ================= HEADER ================= */}
+            <IonButtons slot="start">
+                <IonMenuButton />
+            </IonButtons>
 
-            <IonHeader>
+            {/* <IonHeader>
 
                 <IonToolbar color="light">
+
+                    <IonButtons slot="start">
+                        <IonMenuButton />
+                    </IonButtons>
 
                     <IonTitle>
 
@@ -164,9 +196,25 @@ const Wishlist: React.FC = () => {
 
                     </IonTitle>
 
+
+                    <IonButtons slot="end">
+
+
+                        <Link to={"./Wishlist"}><IonIcon icon={heartOutline} /></Link>
+
+                        <Link to={"./Cart"}> <IonIcon icon={cartOutline} /></Link>
+
+                        <Link to={"./Account"}> <IonIcon icon={personOutline} /></Link>
+
+                        <IonButton onClick={handleLogout} className="logout-btn">
+                            Logout
+                        </IonButton>
+
+                    </IonButtons>
+
                 </IonToolbar>
 
-            </IonHeader>
+            </IonHeader> */}
 
             {/* ================= CONTENT ================= */}
 
