@@ -31,9 +31,8 @@ import { useHistory } from 'react-router-dom';
 
 import { heartOutline, heart } from 'ionicons/icons';
 import { IonIcon } from '@ionic/react'
-import { cartOutline, } from 'ionicons/icons';
-import { personOutline, person, peopleOutline } from 'ionicons/icons';
-import { Link } from "react-router-dom";
+import "./Wishlist.css";
+
 
 interface WishlistProduct {
     _id: string;
@@ -169,7 +168,7 @@ const Wishlist: React.FC = () => {
     };
 
 
-    
+
 
     return (
 

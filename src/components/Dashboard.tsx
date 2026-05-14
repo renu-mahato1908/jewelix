@@ -68,10 +68,12 @@ interface topProduct {
 
 }
 
-interface chartData {
+interface ChartData {
   labels: string[];
-  datasets: string[];
+  datasets: any[];
 }
+
+
 
 
 
@@ -121,7 +123,12 @@ const Dashboard: React.FC = () => {
 
   const [totalOrders, setTotalOrders] = useState(0);
   const [reportSummary, setReportSummary] = useState<Reportsummary>();
-  const [chartData, setChartData] = useState<chartData[]>([]);
+  // const [chartData, setChartData] = useState<chartData[]>([]);
+
+  const [chartData, setChartData] = useState<ChartData>({
+    labels: [],
+    datasets: [],
+  });
   const [topProducts, setTopProducts] = useState<topProduct[]>([]);
   const [dailyReports, setDailyReports] = useState<DailyReport>();
 

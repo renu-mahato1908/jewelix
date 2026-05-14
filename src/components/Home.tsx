@@ -8,16 +8,9 @@ import {
     IonCol,
     IonContent,
     IonGrid,
-    IonHeader,
-    IonMenuButton,
+   
     IonPage,
-    IonTitle,
-    IonToolbar,
-    IonButton,
-    IonTabBar,
-    IonTabButton,
-    IonLabel,
-    IonBadge
+   
 
 } from '@ionic/react';
 
@@ -27,12 +20,7 @@ import './Home.css';
 import { useDispatch, useSelector, } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logout } from "../Slices/auth";
-import { heartOutline, heart } from 'ionicons/icons';
-import { IonIcon } from '@ionic/react'
-import { cartOutline, cart } from 'ionicons/icons';
-import { personOutline, person, peopleOutline, logOutOutline } from 'ionicons/icons';
-import { Link } from "react-router-dom";
-import { calendar, musicalNote } from 'ionicons/icons';
+
 
 const Home: React.FC = () => {
 
@@ -55,14 +43,7 @@ const Home: React.FC = () => {
 
 
 
-    // const dispatch = useDispatch();
-    // const history = useHistory();
-
-    // const handleLogout = () => {
-    //     dispatch(logout());          // Redux state clear
-    //     localStorage.removeItem("user");
-    //     history.replace("/SignIn");   // redirect to login page
-    // };
+    
 
 
     const handleLogout = () => {

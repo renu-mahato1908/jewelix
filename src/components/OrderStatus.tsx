@@ -105,13 +105,12 @@ const OrderStatus: React.FC = () => {
         <div
           className="status-line-active"
           style={{
-            width: `${
-              currentStep === -1
+            width: `${currentStep === -1
                 ? 0
                 : (currentStep /
-                    (steps.length - 1)) *
-                  100
-            }%`,
+                  (steps.length - 1)) *
+                100
+              }%`,
           }}
         ></div>
 
@@ -126,11 +125,10 @@ const OrderStatus: React.FC = () => {
             >
 
               <div
-                className={`step-circle ${
-                  index <= currentStep
+                className={`step-circle ${index <= currentStep
                     ? "active"
                     : ""
-                }`}
+                  }`}
               >
                 {index < currentStep
                   ? "✓"
@@ -138,11 +136,10 @@ const OrderStatus: React.FC = () => {
               </div>
 
               <p
-                className={`step-text ${
-                  index <= currentStep
+                className={`step-text ${index <= currentStep
                     ? "active-text"
                     : ""
-                }`}
+                  }`}
               >
                 {step}
               </p>
@@ -250,13 +247,13 @@ const OrderStatus: React.FC = () => {
                                       ?.images
                                       ?.length > 0 && (
 
-                                      <IonImg
-                                        className="product-img"
-                                        src={`http://localhost:8090/upload/${item.productId.images[0]}`}
-                                        alt="product"
-                                      />
+                                        <IonImg
+                                          className="product-img"
+                                          src={`http://localhost:8090/upload/${item.productId.images[0]}`}
+                                          alt="product"
+                                        />
 
-                                    )}
+                                      )}
 
                                   </td>
 

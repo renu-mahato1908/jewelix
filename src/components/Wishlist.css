@@ -1,0 +1,53 @@
+/* ================= CARD ================= */
+
+.wishlist-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* ================= IMAGE ================= */
+
+.wishlist-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn {
+  position: absolute;
+    top: 12px;
+    right: 12px;
+
+    --background: #ffffff;
+    --color: #e63946;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= ICON ================= */
+
+.delete-btn ion-icon {
+  font-size: 50px;
+  color: red;
+  
+}
+
+/* ================= DESCRIPTION ================= */
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0 14px;
+}
+
+
+.delete-btn ion-icon {
+  font-size: 46px;
+}

@@ -53,7 +53,7 @@ import ViewProduct from './components/ViewProduct';
 import Cart from './components/Cart';
 import Wishlist from './components/Wishlist';
 import Address from './components/Address';
-// import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard';
 import Account from './components/Account';
 import Order from './components/Order';
 import Products from './components/Products';
@@ -61,7 +61,7 @@ import OrdersDetail from './components/OrderDetail';
 import OrderStatus from './components/OrderStatus';
 import Rings from './components/Rings';
 import Invoice from './components/Invoice';
-// import Dashboard from './components/Dashboard';
+
 
 setupIonicReact();
 
@@ -73,11 +73,11 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
+              <Redirect to="/Home" />
             </Route>
-            <Route path="/folder/:name" exact={true}>
+            {/* <Route path="/Home" exact={true}>
               <Page />
-            </Route>
+            </Route> */}
 
             <Route path="/Home" exact={true}>
               <Home />
@@ -143,9 +143,9 @@ const App: React.FC = () => {
               <Mangalsutra />
             </Route>
 
-            {/* <Route path="/Dashboard" exact={true}>
+            <Route path="/Dashboard" exact={true}>
               <Dashboard />
-            </Route> */}
+            </Route>
 
             <Route path="/Category/:categoryName" exact={true}>
               <Category />
