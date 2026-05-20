@@ -4,7 +4,6 @@ ion-content {
     --background: #f6f6f6;
 }
 
-/* ================= CARD ================= */
 
 ion-card {
     border-radius: 18px;
@@ -13,7 +12,6 @@ ion-card {
     overflow: hidden;
 }
 
-/* ================= HEADING ================= */
 
 h2 {
     font-size: 28px;
@@ -24,7 +22,6 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* ================= INPUT SECTION ================= */
 
 ion-item {
     --background: #ffffff;
@@ -47,7 +44,6 @@ ion-input {
     font-size: 15px;
 }
 
-/* ================= RADIO SECTION ================= */
 
 .radio-section {
     margin-top: 20px;
@@ -59,7 +55,6 @@ ion-input {
     box-shadow: none;
 }
 
-/* ================= BUTTON ================= */
 
 ion-button {
     --background: linear-gradient(135deg, #c89b3c, #f0d28b);
@@ -76,7 +71,6 @@ ion-button[color="success"] {
     --color: #fff;
 }
 
-/* ================= ERROR TEXT ================= */
 
 ion-text[color="danger"] {
     display: block;
@@ -87,7 +81,6 @@ ion-text[color="danger"] {
     font-weight: 500;
 }
 
-/* ================= ADDRESS SELECT CARD ================= */
 
 ion-item h3 {
     margin: 0;
@@ -101,7 +94,6 @@ ion-item p {
     line-height: 1.5;
 }
 
-/* ================= BADGE ================= */
 
 ion-badge {
     padding: 7px 12px;
@@ -110,7 +102,6 @@ ion-badge {
     letter-spacing: 0.5px;
 }
 
-/* ================= SPINNER ================= */
 
 ion-spinner {
     transform: scale(1.2);

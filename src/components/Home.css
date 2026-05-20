@@ -562,3 +562,12 @@
 
   /* z-index: 999; */
 }
+
+
+.logo{
+  width: 175px;
+  height: 100px;
+  background: #ffffff;
+  padding: 20px 0;
+ 
+}

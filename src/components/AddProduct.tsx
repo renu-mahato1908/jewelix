@@ -343,6 +343,16 @@ const AddProduct: React.FC = () => {
     productGender: Yup.string().required("Required"),
   });
 
+
+
+   useEffect(() => {
+  
+      if (currentUser && currentUser.roles[0] !== "ROLE_ADMIN") {
+        history.push("/Dashboard");
+      }
+  
+    }, [history]);
+
   return (
     <IonPage>
       <IonContent className="addproduct-content ion-padding">

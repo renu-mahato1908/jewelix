@@ -374,7 +374,15 @@ const Account: React.FC = () => {
                             Email :
                           </strong>{" "}
 
-                          {currentUser.email}
+                          {currentUser.email},
+                        </p>
+
+                        <p>
+                          <strong>
+                            User Name :
+                          </strong>{" "}
+
+                          {currentUser.firstName}{currentUser.lastName}
                         </p>
 
                       </div>

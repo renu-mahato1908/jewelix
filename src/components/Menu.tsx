@@ -94,7 +94,7 @@ const appPages = [
   {
     title: 'Diamond',
     url: '/Category/Diamond',
-    icon: GiDiamondRing
+    icon: FaGem
   },
 
   {
@@ -118,12 +118,19 @@ const appPages = [
   {
     title: 'Rings',
     url: '/Category/Rings',
-    icon: FaGem
+    
+
+    icon: GiDiamondRing
   },
   {
     title: 'Bangles',
     url: '/Category/Bangles',
     icon: BsCircle
+  },
+   {
+    title: 'Wedding',
+    url: '/Category/Wedding',
+    icon: GiNecklaceDisplay
   }
 ];
 
@@ -142,7 +149,7 @@ const Menu: React.FC = () => {
         <IonList id="inbox-list">
           <IonListHeader>
             {/* <div className="logo"> */}
-              <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
+              <img src="/image.png" className="logo"  alt='img'/>
             {/* </div> */}
           </IonListHeader>
           {/* <IonNote>@jewellery.com</IonNote> */}

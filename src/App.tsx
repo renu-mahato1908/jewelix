@@ -61,6 +61,8 @@ import OrdersDetail from './components/OrderDetail';
 import OrderStatus from './components/OrderStatus';
 import Rings from './components/Rings';
 import Invoice from './components/Invoice';
+import Payment from './components/Payment';
+import Wedding from './components/Wedding';
 
 
 setupIonicReact();
@@ -139,6 +141,10 @@ const App: React.FC = () => {
               <Rings />
             </Route>
 
+             <Route path="/Wedding" exact={true}>
+              <Wedding />
+            </Route>
+
             <Route path="/Mangalsutra" exact={true}>
               <Mangalsutra />
             </Route>
@@ -190,6 +196,11 @@ const App: React.FC = () => {
 
             <Route path="/Products" exact={true}>
               <Products />
+            </Route>
+
+
+             <Route path="/Payment" exact={true}>
+              <Payment/>
             </Route>
 
             <Route

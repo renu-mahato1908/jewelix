@@ -337,11 +337,6 @@ const Category = () => {
 
                         </IonCol>
 
-                    </IonRow>
-
-                    {/* ================= PRICE RANGE ================= */}
-
-                    <IonRow>
 
                         <IonCol>
 
@@ -370,6 +365,14 @@ const Category = () => {
                             />
 
                         </IonCol>
+
+                    </IonRow>
+
+                    {/* ================= PRICE RANGE ================= */}
+
+                    <IonRow>
+
+                        
 
                     </IonRow>
 

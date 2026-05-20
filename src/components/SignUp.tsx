@@ -1,8 +1,4 @@
 
-
-
-
-
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import {
@@ -63,7 +59,7 @@ const SignUp: React.FC = () => {
           <IonTitle className="header-title">
 
             <div className="logo">
-              <img src="" className="logo" />
+              {/* <img src="" className="logo"/> */}
             </div>
           </IonTitle>
         </IonToolbar>
