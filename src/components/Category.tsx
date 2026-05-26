@@ -1,5 +1,5 @@
 
- import Header from "../components/Header";
+import Header from "../components/Header";
 
 
 import axios from 'axios';
@@ -123,12 +123,20 @@ const Category = () => {
 
     // ================= ADD TO CART =================
 
-    const handleCart = (product) => {
+    const history = useHistory();
+
+    const handleCart = (product: Product) => {
 
         if (!currentUser) {
 
             setToastMessage("Please login first");
             setShowToast(true);
+
+            setTimeout(() => {
+
+                history.push("/SignIn");
+
+            }, 1000);
 
             return;
         }
@@ -138,43 +146,65 @@ const Category = () => {
             userId: currentUser.id,
 
             items: [
+
                 {
-                    productId: product?.id,
+
+                    productId: product.id,
                     quantity: 1,
-                    price: product?.productPrice
+                    price: product.productPrice
+
                 }
+
             ]
+
         };
 
-        axios.post(`http://localhost:8090/api/carts`, data)
+        axios
+            .post(
+                "http://localhost:8090/api/carts",
+                data
+            )
 
-            .then((response) => {
+            .then(() => {
 
-                console.log(response.data);
+                setToastMessage(
+                    "Product added to cart"
+                );
 
-                setToastMessage("Product added to cart");
                 setShowToast(true);
 
             })
 
-            .catch((error) => {
+            .catch(() => {
 
-                console.log(error);
+                setToastMessage(
+                    "Cart error"
+                );
 
-                setToastMessage("Cart error");
                 setShowToast(true);
 
             });
+
     };
 
-    // ================= WISHLIST =================
 
-    const handleWishlist = (product) => {
+    const handleWishlist = (
+        product: Product
+    ) => {
 
         if (!currentUser) {
 
-            setToastMessage("Please login first");
+            setToastMessage(
+                "Please login first"
+            );
+
             setShowToast(true);
+
+            setTimeout(() => {
+
+                history.push("/SignIn");
+
+            }, 1000);
 
             return;
         }
@@ -182,41 +212,141 @@ const Category = () => {
         const data = {
 
             userId: currentUser.id,
-            productId: product?.id,
+
+            productId: product.id
 
         };
 
-        axios.post(`http://localhost:8090/api/wishlist`, data)
+        axios
+            .post(
+                "http://localhost:8090/api/wishlist",
+                data
+            )
 
-            .then((response) => {
+            .then(() => {
 
-                console.log(response.data);
+                setToastMessage(
+                    "Added to wishlist"
+                );
 
-                setToastMessage("Added to wishlist");
                 setShowToast(true);
 
             })
 
             .catch((error) => {
 
-                console.log(error);
+                if (
+                    error.response?.status === 409
+                ) {
 
-                if (error.response?.status === 409) {
-
-                    setToastMessage("Product already in wishlist");
+                    setToastMessage(
+                        "Already in wishlist"
+                    );
 
                 }
 
                 else {
 
-                    setToastMessage("Something went wrong");
+                    setToastMessage(
+                        "Something went wrong"
+                    );
 
                 }
 
                 setShowToast(true);
 
             });
+
     };
+
+    // const handleCart = (product) => {
+
+    //     if (!currentUser) {
+
+    //         setToastMessage("Please login first");
+    //         setShowToast(true);
+
+    //         return;
+    //     }
+
+    //     const data = {
+
+    //         userId: currentUser.id,
+
+    //         items: [
+    //             {
+    //                 productId: product?.id,
+    //                 quantity: 1,
+    //                 price: product?.productPrice
+    //             }
+    //         ]
+    //     };
+
+    //     axios.post(`http://localhost:8090/api/carts`, data)
+
+    //         .then((response) => {
+
+    //             console.log(response.data);
+
+    //             setToastMessage("Product added to cart");
+    //             setShowToast(true);
+
+    //         })
+
+    //         .catch((error) => {
+
+    //             console.log(error);
+
+    //             setToastMessage("Cart error");
+    //             setShowToast(true);
+
+    //         });
+    // };
+
+    // ================= WISHLIST =================
+
+    // const handleWishlist = (product) => {
+
+
+
+    //     const data = {
+
+    //         userId: currentUser.id,
+    //         productId: product?.id,
+
+    //     };
+
+    //     axios.post(`http://localhost:8090/api/wishlist`, data)
+
+    //         .then((response) => {
+
+    //             console.log(response.data);
+
+    //             setToastMessage("Added to wishlist");
+    //             setShowToast(true);
+
+    //         })
+
+    //         .catch((error) => {
+
+    //             console.log(error);
+
+    //             if (error.response?.status === 409) {
+
+    //                 setToastMessage("Product already in wishlist");
+
+    //             }
+
+    //             else {
+
+    //                 setToastMessage("Something went wrong");
+
+    //             }
+
+    //             setShowToast(true);
+
+    //         });
+    // };
 
     // ================= UNIQUE CATEGORY =================
 
@@ -232,7 +362,7 @@ const Category = () => {
 
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    
 
     const handleLogout = () => {
         dispatch(logout());          // Redux state clear
@@ -240,18 +370,18 @@ const Category = () => {
         history.replace("/SignIn");   // redirect to login page
     };
 
-//     const handleLogout = () => {
-//     localStorage.clear();
-//   };
+    //     const handleLogout = () => {
+    //     localStorage.clear();
+    //   };
 
 
     return (
 
         <IonPage>
 
-          
 
-                  <Header handleLogout={handleLogout} />
+
+            <Header handleLogout={handleLogout} />
 
 
             <IonContent className="ion-padding">
@@ -372,7 +502,7 @@ const Category = () => {
 
                     <IonRow>
 
-                        
+
 
                     </IonRow>
 
@@ -448,12 +578,12 @@ const Category = () => {
 
                                             <div className="image-container">
 
-                                              <Link to={`/ViewProduct/${product?.id}`}>
-                                                <IonImg
-                                                    className="category-image"
-                                                    src={`http://localhost:8090/upload/${product?.images?.[0]}`}
-                                                />
-                                              </Link>
+                                                <Link to={`/ViewProduct/${product?.id}`}>
+                                                    <IonImg
+                                                        className="category-image"
+                                                        src={`http://localhost:8090/upload/${product?.images?.[0]}`}
+                                                    />
+                                                </Link>
 
                                                 <IonButton
                                                     className="wishlist-btn"
@@ -480,16 +610,7 @@ const Category = () => {
                                                     Add To Cart
                                                 </IonButton>
 
-                                                {/* <Link to={`/ViewProduct/${product?.id}`}>
 
-                                                    <IonButton
-                                                        expand="block"
-                                                        fill="outline"
-                                                    >
-                                                        View Product
-                                                    </IonButton>
-
-                                                </Link> */}
 
                                             </IonCardContent>
 
@@ -521,3 +642,11 @@ const Category = () => {
 };
 
 export default Category;
+
+
+
+
+
+
+
+

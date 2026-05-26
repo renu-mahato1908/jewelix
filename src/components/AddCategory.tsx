@@ -51,6 +51,13 @@ const AddCategory: React.FC = () => {
 
 
     const [categories, setCategories] = useState([]);
+    useEffect(() => {
+      
+          if (currentUser && currentUser.roles[0] !== "ROLE_ADMIN") {
+            history.push("/Home");
+          }
+      
+        }, [history]);
 
     useEffect(() => {
         axios.get("http://localhost:8090/api/cats").then((response) => {

@@ -87,6 +87,7 @@ const Wishlist: React.FC = () => {
             });
 
     }, [currentUser]);
+    localStorage.getItem("user");
 
     // ================= ADD TO CART =================
 
@@ -170,58 +171,24 @@ const Wishlist: React.FC = () => {
 
 
 
+
+
     return (
 
         <IonPage>
             <Header handleLogout={handleLogout} />
 
 
-            {/* ================= HEADER ================= */}
             <IonButtons slot="start">
                 <IonMenuButton />
             </IonButtons>
 
-            {/* <IonHeader>
 
-                <IonToolbar color="light">
-
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
-
-                    <IonTitle>
-
-                        My Wishlist
-
-                    </IonTitle>
-
-
-                    <IonButtons slot="end">
-
-
-                        <Link to={"./Wishlist"}><IonIcon icon={heartOutline} /></Link>
-
-                        <Link to={"./Cart"}> <IonIcon icon={cartOutline} /></Link>
-
-                        <Link to={"./Account"}> <IonIcon icon={personOutline} /></Link>
-
-                        <IonButton onClick={handleLogout} className="logout-btn">
-                            Logout
-                        </IonButton>
-
-                    </IonButtons>
-
-                </IonToolbar>
-
-            </IonHeader> */}
-
-            {/* ================= CONTENT ================= */}
 
             <IonContent className="ion-padding">
 
                 <IonGrid>
 
-                    {/* ================= LOADING ================= */}
 
                     {
 
@@ -383,3 +350,15 @@ const Wishlist: React.FC = () => {
 };
 
 export default Wishlist;
+
+
+
+
+
+
+
+
+
+
+
+

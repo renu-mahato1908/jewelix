@@ -8,9 +8,9 @@ import {
     IonCol,
     IonContent,
     IonGrid,
-   
+
     IonPage,
-   
+
 
 } from '@ionic/react';
 
@@ -43,14 +43,14 @@ const Home: React.FC = () => {
 
 
 
-    
+
 
 
     const handleLogout = () => {
         localStorage.clear();
     };
 
-
+    
 
 
 
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 
 
 
-            
+
 
             <Header handleLogout={handleLogout} />
 
