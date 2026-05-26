@@ -26,7 +26,7 @@ import {
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { trashOutline } from "ionicons/icons";
-import "./AddCategory.css";
+import "./Addcategory.css";
 
 //  Validation
 const Schema = Yup.object().shape({
