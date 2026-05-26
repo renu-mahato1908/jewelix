@@ -21,7 +21,7 @@ import { register } from "../Slices/auth";
 import { clearMessage } from "../Slices/message";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./Signin.css";
+import "./Signup.css";
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string().min(2).max(50).required("Required"),
