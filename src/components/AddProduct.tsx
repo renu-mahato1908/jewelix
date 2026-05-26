@@ -15,7 +15,7 @@ import {
   IonRadioGroup,
   IonRadio,
 } from "@ionic/react";
-import "./Addproduct.css"
+import "./AddProduct.css";
 
 import axios from "axios";
 import React, { useState, useEffect } from "react";
