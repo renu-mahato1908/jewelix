@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
-import AuthService from "../services/auth.service";
+import AuthService from "../Services/auth.service";
 
 
 interface User {
