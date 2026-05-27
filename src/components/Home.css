@@ -20,6 +20,22 @@
 }
 
 
+.category1 a,
+.category2 a,
+.view_all a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category1 a h4,
+.category2 a h4,
+.view_all a h3,
+.view_all a h4,
+.view_all a p {
+  text-decoration: none;
+}
+
+
 
 .category1 img,
 .category2 img {
@@ -27,11 +43,14 @@
   border-radius: 10px;
 }
 
+
 .category1 h4,
 .category2 h4 {
   text-align: center;
   margin-top: 8px;
   font-size: 14px;
+
+  font-style: none;
 }
 
 .view_all {
@@ -80,15 +99,17 @@
 /* Grid fix (equal height) */
 .auspicious ion-col {
   display: flex;
+  padding: 10px 10px;
 }
 
 /* Card Box */
 .trend_box {
-  width: 80%;
+  width: 100%;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
+
 
   display: flex;
   flex-direction: column;
@@ -174,10 +195,19 @@
 }
 
 
+
+
 .world_box img {
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.world_box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
 }
 
 /* Text overlay */
@@ -189,6 +219,7 @@
   color: #fff;
   font-size: 18px;
   font-weight: 600;
+
 
   background: rgba(0, 0, 0, 0.4);
   padding: 5px 10px;
@@ -564,10 +595,10 @@
 }
 
 
-.logo{
+.logo {
   width: 175px;
   height: 100px;
   background: #ffffff;
   padding: 20px 0;
- 
+
 }

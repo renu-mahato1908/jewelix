@@ -36,7 +36,7 @@ const Order: React.FC = () => {
     useEffect(() => {
 
         axios
-            .get("http://localhost:8090/api/ssorders")
+            .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders")
             .then((response) => {
 
                 console.log("API Response:", response.data);

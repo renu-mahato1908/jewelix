@@ -58,7 +58,7 @@ const OrderDetail: React.FC = () => {
   // Fetch Orders
   useEffect(() => {
     axios
-      .get("http://localhost:8090/api/ssorders")
+      .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders")
       .then((res) => {
         setOrders(res.data);
       })
@@ -85,7 +85,7 @@ const OrderDetail: React.FC = () => {
 
     axios
       .put(
-        `http://localhost:8090/api/ssorders/${orderId}/status`,
+        `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/${orderId}/status`,
         { status: status }
       )
       .then((res) => {
@@ -184,7 +184,7 @@ const OrderDetail: React.FC = () => {
 
                                         <IonImg
                                           className="order-img"
-                                          src={`http://localhost:8090/upload/${product.productId.images[0]}`}
+                                          src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product.productId.images[0]}`}
                                           alt="product"
                                         />
 

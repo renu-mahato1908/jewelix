@@ -37,7 +37,7 @@ const Schema = Yup.object().shape({
             "Category already exists",
             async function (value) {
                 if (!value) return false;
-                const res = await fetch(`http://localhost:8090/api/cats/check?name=${value}`);
+                const res = await fetch(`https://simmering-shabby-overtake.ngrok-free.dev/api/cats/check?name=${value}`);
                 const data = await res.json();
                 return !data.exists;
             }
@@ -60,7 +60,7 @@ const AddCategory: React.FC = () => {
         }, [history]);
 
     useEffect(() => {
-        axios.get("http://localhost:8090/api/cats").then((response) => {
+        axios.get("https://simmering-shabby-overtake.ngrok-free.dev/api/cats").then((response) => {
             console.log(response.data);
             setCategories(response.data);
         });
@@ -70,7 +70,7 @@ const AddCategory: React.FC = () => {
 
     const handleDelete = (id) => {
         console.log(id);
-        axios.delete(`http://localhost:8090/api/cats/${id}`).then((response) => {
+        axios.delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/cats/${id}`).then((response) => {
             console.log(response.data);
             console.log("successfully category delete");
             window.location.reload();
@@ -111,7 +111,7 @@ const AddCategory: React.FC = () => {
                                     validationSchema={Schema}
                                     onSubmit={async (values, { resetForm }) => {
                                         try {
-                                            await axios.post("http://localhost:8090/api/cats", values);
+                                            await axios.post("https://simmering-shabby-overtake.ngrok-free.dev/api/cats", values);
                                             alert("Category added successfully!");
                                             resetForm();
                                             history.push("/products");

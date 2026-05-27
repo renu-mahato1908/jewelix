@@ -57,7 +57,7 @@ const OrderStatus: React.FC = () => {
 
       axios
         .get(
-          `http://localhost:8090/api/ssorders/user/${currentUser.id}`
+          `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/user/${currentUser.id}`
         )
         .then((response) => {
 
@@ -249,7 +249,7 @@ const OrderStatus: React.FC = () => {
 
                                         <IonImg
                                           className="product-img"
-                                          src={`http://localhost:8090/upload/${item.productId.images[0]}`}
+                                          src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${item.productId.images[0]}`}
                                           alt="product"
                                         />
 

@@ -79,7 +79,12 @@ const Category = () => {
         setLoading(true);
 
         axios
-            .get(`http://localhost:8090/api/ssproducts/category/${categoryName}`)
+            // .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/category/${categoryName}`)
+            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/category/${categoryName}`, {
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                }
+            })
 
             .then((response) => {
 
@@ -161,7 +166,7 @@ const Category = () => {
 
         axios
             .post(
-                "http://localhost:8090/api/carts",
+                "https://simmering-shabby-overtake.ngrok-free.dev/api/carts",
                 data
             )
 
@@ -219,7 +224,7 @@ const Category = () => {
 
         axios
             .post(
-                "http://localhost:8090/api/wishlist",
+                "https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist",
                 data
             )
 
@@ -282,7 +287,7 @@ const Category = () => {
     //         ]
     //     };
 
-    //     axios.post(`http://localhost:8090/api/carts`, data)
+    //     axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
 
     //         .then((response) => {
 
@@ -316,7 +321,7 @@ const Category = () => {
 
     //     };
 
-    //     axios.post(`http://localhost:8090/api/wishlist`, data)
+    //     axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist`, data)
 
     //         .then((response) => {
 
@@ -362,7 +367,7 @@ const Category = () => {
 
 
     const dispatch = useDispatch();
-    
+
 
     const handleLogout = () => {
         dispatch(logout());          // Redux state clear
@@ -581,7 +586,7 @@ const Category = () => {
                                                 <Link to={`/ViewProduct/${product?.id}`}>
                                                     <IonImg
                                                         className="category-image"
-                                                        src={`http://localhost:8090/upload/${product?.images?.[0]}`}
+                                                        src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product?.images?.[0]}`}
                                                     />
                                                 </Link>
 

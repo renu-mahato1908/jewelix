@@ -57,7 +57,7 @@ const ViewProduct = () => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:8090/api/ssproducts/${productId}`)
+      .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/${productId}`)
 
       .then((response) => {
 
@@ -102,7 +102,7 @@ const ViewProduct = () => {
 
     };
 
-    axios.post(`http://localhost:8090/api/wishlist`, data)
+    axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist`, data)
 
       .then((response) => {
 
@@ -163,7 +163,7 @@ const ViewProduct = () => {
       ]
     };
 
-    axios.post(`http://localhost:8090/api/carts`, data)
+    axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
 
       .then((response) => {
 
@@ -231,7 +231,7 @@ const ViewProduct = () => {
 
                     <IonImg
                       className="product-image"
-                      src={`http://localhost:8090/upload/${product?.images?.[0]}`}
+                      src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product?.images?.[0]}`}
                     />
 
                     {/* WISHLIST */}

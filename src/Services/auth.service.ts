@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8090/api/auth/";
+const API_URL = "https://simmering-shabby-overtake.ngrok-free.dev/api/auth/";
 
 const register = (firstName:string, lastName:string, username: string, email: string, password: string) => {
   return axios.post(API_URL + "signup", {

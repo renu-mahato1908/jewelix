@@ -20,6 +20,7 @@ import './Home.css';
 import { useDispatch, useSelector, } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logout } from "../Slices/auth";
+import { Link } from "react-router-dom";
 
 
 const Home: React.FC = () => {
@@ -50,7 +51,7 @@ const Home: React.FC = () => {
         localStorage.clear();
     };
 
-    
+
 
 
 
@@ -75,7 +76,7 @@ const Home: React.FC = () => {
 
 
 
-                            <h3> Tanishq Collection</h3>
+                            <h3> Jewelix  Collection</h3>
                             <h4>Explore our Newly launched collection</h4>
 
 
@@ -142,24 +143,31 @@ const Home: React.FC = () => {
                     <IonRow className="category1">
 
                         <IonCol size="6" size-md="3">
-                            <img src=" https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw32c0481a/homepage/shopByCategory/earrings-3-4-26.jpg" alt="earing" />
-                            <h4>EARINGS</h4>
+                            <Link to="/Category/Earrings">
+                                <img src=" https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw32c0481a/homepage/shopByCategory/earrings-3-4-26.jpg" alt="earing" />
+                                <h4>EARINGS</h4></Link>
 
                         </IonCol>
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwdd52311e/homepage/shopByCategory/ring-3-4-26.jpg" alt="finger_ring" />
-                            <h4>FINGER RINGS</h4>
+                            <Link to="/Category/Rings">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwdd52311e/homepage/shopByCategory/ring-3-4-26.jpg" alt="finger_ring" />
+                                <h4>FINGER RINGS</h4>
+                            </Link>
                         </IonCol>
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw49078ca4/homepage/shopByCategory/pendants-3-4-26.jpg" alt="pendants" />
-                            <h4>PENDANTS</h4>
+                            <Link to="/Category/Pendant">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw49078ca4/homepage/shopByCategory/pendants-3-4-26.jpg" alt="pendants" />
+                                <h4>PENDANTS</h4>
+                            </Link>
                         </IonCol>
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwc8444991/homepage/shopByCategory/mangalsutra-3-4-26.jpg" alt="mangalsutra" />
-                            <h4>MANGALSUTRA</h4>
+                            <Link to="/Category/Mangalsutra">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwc8444991/homepage/shopByCategory/mangalsutra-3-4-26.jpg" alt="mangalsutra" />
+                                <h4>MANGALSUTRA</h4>
+                            </Link>
                         </IonCol>
 
                     </IonRow>
@@ -168,25 +176,33 @@ const Home: React.FC = () => {
                     <IonRow className="category2">
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw495a937b/homepage/shopByCategory/bracelets-3-4-26.jpg" alt="bracelets" />
-                            <h4>BRACELETS</h4>
+                            <Link to="/Category/Bracelets">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw495a937b/homepage/shopByCategory/bracelets-3-4-26.jpg" alt="bracelets" />
+                                <h4>BRACELETS</h4>
+                            </Link>
                         </IonCol>
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw55713d35/homepage/shopByCategory/bangles-3-4-26.jpg" alt="bangles" />
-                            <h4>BANGLES</h4>
+                            <Link to="/Category/Bangles">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw55713d35/homepage/shopByCategory/bangles-3-4-26.jpg" alt="bangles" />
+                                <h4>BANGLES</h4>
+                            </Link>
                         </IonCol>
 
                         <IonCol size="6" size-md="3">
-                            <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dweb159955/homepage/shopByCategory/chains-3-4-26.jpg" alt="chain" />
-                            <h4>CHAIN</h4>
+                            <Link to="/Category/Chain">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dweb159955/homepage/shopByCategory/chains-3-4-26.jpg" alt="chain" />
+                                <h4>CHAIN</h4>
+                            </Link>
                         </IonCol>
 
                         {/* View All */}
                         <IonCol size="6" size-md="3" className="view_all ion-text-center">
-                            <h3>10+</h3>
-                            <p>categories to choose all</p>
-                            <h4>VIEW ALL</h4>
+                            <Link to="AllProduct">
+                                <h3>10+</h3>
+                                <p>categories to choose all</p>
+                                <h4>VIEW ALL</h4>
+                            </Link>
                         </IonCol>
 
                     </IonRow>
@@ -252,13 +268,17 @@ const Home: React.FC = () => {
                         <IonCol size="12" size-md="6">
 
                             <div className="world_box">
-                                <img src="./wedding.png" alt="wedding" />
-                                <h4>WEDDING</h4>
+                                <Link to="/Category/Wedding">
+                                    <img src="./wedding.png" alt="wedding" />
+                                    <h4>WEDDING</h4>
+                                </Link>
                             </div>
 
                             <div className="world_box">
-                                <img src="./gold.png" alt="gold" />
-                                <h4>GOLD</h4>
+                                <Link to="/Category/Gold">
+                                    <img src="./gold.png" alt="gold" />
+                                    <h4>GOLD</h4>
+                                </Link>
                             </div>
 
                         </IonCol>
@@ -267,13 +287,17 @@ const Home: React.FC = () => {
                         <IonCol size="12" size-md="6">
 
                             <div className="world_box">
-                                <img src="./diamond.png" alt="diamond" />
-                                <h4>DIAMOND</h4>
+                                <Link to="/Category/Diamond">
+                                    <img src="./diamond.png" alt="diamond" />
+                                    <h4>DIAMOND</h4>
+                                </Link>
                             </div>
 
                             <div className="world_box">
-                                <img src="./dailywear.png" alt="dailywear" />
-                                <h4>DAILY WEAR</h4>
+                                <Link to ="DailyWear">
+                                    <img src="./dailywear.png" alt="dailywear" />
+                                    <h4>DAILY WEAR</h4>
+                                </Link>
 
                             </div>
 

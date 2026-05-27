@@ -120,7 +120,7 @@ const Address = () => {
         setLoading(true);
 
         axios
-            .post(`http://localhost:8090/api/addresses`, formData)
+            .post(`https://simmering-shabby-overtake.ngrok-free.dev/api/addresses`, formData)
 
             .then((response) => {
 
@@ -158,7 +158,7 @@ const Address = () => {
         if (!currentUser) return;
 
         axios
-            .get(`http://localhost:8090/api/addresses/user/${currentUser.id}`)
+            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/addresses/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -181,7 +181,7 @@ const Address = () => {
         if (!currentUser) return;
 
         axios
-            .get(`http://localhost:8090/api/carts/user/${currentUser.id}`)
+            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -247,14 +247,14 @@ const Address = () => {
         };
 
         axios
-            .post("http://localhost:8090/api/ssorders", data)
+            .post("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders", data)
 
             .then((response) => {
 
                 console.log(response.data);
 
                 axios
-                    .delete(`http://localhost:8090/api/carts/user/${currentUser.id}`)
+                    .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`)
 
                     .then(() => {
 

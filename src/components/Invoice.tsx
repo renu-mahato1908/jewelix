@@ -52,7 +52,7 @@
 
 //         axios
 //             .get(
-//                 `http://localhost:8090/api/ssorders/${id}`
+//                 `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/${id}`
 //             )
 
 //             .then((response) => {
@@ -503,7 +503,7 @@ const Invoice: React.FC = () => {
 
         axios
             .get<Order>(
-                `http://localhost:8090/api/ssorders/${id}`
+                `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/${id}`
             )
 
             .then((response) => {

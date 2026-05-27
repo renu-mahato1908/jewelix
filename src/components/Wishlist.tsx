@@ -64,7 +64,7 @@ const Wishlist: React.FC = () => {
         if (!currentUser) return;
 
         axios
-            .get(`http://localhost:8090/api/wishlist/user/${currentUser.id}`)
+            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -107,7 +107,7 @@ const Wishlist: React.FC = () => {
         };
 
         axios
-            .post(`http://localhost:8090/api/carts`, data)
+            .post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
 
             .then((response) => {
 
@@ -133,7 +133,7 @@ const Wishlist: React.FC = () => {
     const handleDelete = (id: string) => {
 
         axios
-            .delete(`http://localhost:8090/api/wishlist/${id}`)
+            .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist/${id}`)
 
             .then(() => {
 
@@ -251,7 +251,7 @@ const Wishlist: React.FC = () => {
 
                                                 <IonImg
                                                     className="wishlist-img"
-                                                    src={`http://localhost:8090/upload/${wishlistproduct.productId.images[0]}`}
+                                                    src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${wishlistproduct.productId.images[0]}`}
                                                 />
 
                                             )

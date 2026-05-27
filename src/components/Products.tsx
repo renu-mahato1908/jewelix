@@ -53,7 +53,7 @@ const Products: React.FC = () => {
   // Fetch Products
   useEffect(() => {
     axios
-      .get("http://localhost:8090/api/ssproducts")
+      .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts")
       .then((response) => {
         setProducts(response.data);
       })
@@ -65,7 +65,7 @@ const Products: React.FC = () => {
   // Delete Product
   const handleDelete = (id: number) => {
     axios
-      .delete(`http://localhost:8090/api/ssproducts/${id}`)
+      .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/${id}`)
       .then((response) => {
         console.log(response.data);
 
@@ -199,7 +199,7 @@ const Products: React.FC = () => {
                             <td>
                               <IonImg
                                 className="product-img"
-                                src={`http://localhost:8090/upload/${product.images[0]}`}
+                                src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product.images[0]}`}
                                 alt="product"
                               />
                             </td>

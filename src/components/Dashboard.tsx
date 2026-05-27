@@ -148,7 +148,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/ssorders")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders")
 //       .then((response) => {
 
 //         setTotalOrders(response.data.length);
@@ -165,7 +165,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/usercount")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/usercount")
 //       .then((response) => {
 
 //         Setusers(response.data);
@@ -178,7 +178,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/ssorders/reports/summary")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/reports/summary")
 //       .then((response) => {
 
 //         setReportSummary(response.data);
@@ -191,7 +191,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/ssorders/chartdata")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/chartdata")
 //       .then((response) => {
 
 //         setChartData(response.data);
@@ -209,7 +209,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/ssorders/top-selling-products")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/top-selling-products")
 //       .then((response) => {
 
 //         setTopProducts(response.data);
@@ -222,7 +222,7 @@
 //   useEffect(() => {
 
 //     axios
-//       .get("http://localhost:8090/api/ssorders/reports/daily")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/reports/daily")
 //       .then((response) => {
 
 //         setDailyReports(response.data);
@@ -733,7 +733,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
 
     axios
-      .get("http://localhost:8090/api/ssorders")
+      .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders")
       .then((response) => {
 
         setTotalOrders(response.data.length);
@@ -752,7 +752,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
 
     axios
-      .get("http://localhost:8090/api/usercount")
+      .get("https://simmering-shabby-overtake.ngrok-free.dev/api/usercount")
       .then((response) => {
 
         setUsers(response.data);
@@ -772,7 +772,7 @@ const Dashboard: React.FC = () => {
 
     axios
       .get(
-        "http://localhost:8090/api/ssorders/reports/summary"
+        "https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/reports/summary"
       )
       .then((response) => {
 
@@ -793,7 +793,7 @@ const Dashboard: React.FC = () => {
 
     axios
       .get(
-        "http://localhost:8090/api/ssorders/chartdata"
+        "https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/chartdata"
       )
       .then((response) => {
 
@@ -813,7 +813,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
 
   axios
-    .get("http://localhost:8090/api/ssorders/chartcategorydata")
+    .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/chartcategorydata")
     .then((response) => {
 
       // report data
@@ -869,7 +869,7 @@ const Dashboard: React.FC = () => {
 
     axios
       .get(
-        "http://localhost:8090/api/ssorders/top-selling-products"
+        "https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/top-selling-products"
       )
       .then((response) => {
 
@@ -890,7 +890,7 @@ const Dashboard: React.FC = () => {
 
     axios
       .get(
-        "http://localhost:8090/api/ssorders/reports/daily"
+        "https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/reports/daily"
       )
       .then((response) => {
 

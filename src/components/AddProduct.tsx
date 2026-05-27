@@ -38,7 +38,7 @@ const AddProduct: React.FC = () => {
   const { user: currentUser } = useSelector((state: any) => state.auth);
 
   useEffect(() => {
-    axios.get("http://localhost:8090/api/cats").then((res) => {
+    axios.get("https://simmering-shabby-overtake.ngrok-free.dev/api/cats").then((res) => {
       setCategories(res.data);
     });
   }, []);
@@ -102,7 +102,7 @@ const AddProduct: React.FC = () => {
 
               try {
                 await axios.post(
-                  "http://localhost:8090/api/ssproducts",
+                  "https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts",
                   formData,
                   {
                     headers: {
@@ -335,7 +335,7 @@ export default AddProduct;
 //   // ✅ Load categories
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:8090/api/cats")
+//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/cats")
 //       .then((res) => setCategories(res.data))
 //       .catch((err) => console.error(err));
 //   }, []);
@@ -413,7 +413,7 @@ export default AddProduct;
 
 //               try {
 //                 const res = await axios.post(
-//                   "http://localhost:8090/api/ssproducts",
+//                   "https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts",
 //                   formData
 //                 );
 
