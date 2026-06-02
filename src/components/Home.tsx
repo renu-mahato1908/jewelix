@@ -15,6 +15,8 @@ import {
 } from '@ionic/react';
 
 import './Home.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 import { useDispatch, useSelector, } from "react-redux";
@@ -53,7 +55,13 @@ const Home: React.FC = () => {
 
 
 
-
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 80
+        });
+    }, []);
 
 
 
@@ -129,9 +137,9 @@ const Home: React.FC = () => {
 
 
 
-                <IonGrid>
+                {/* <IonGrid>
 
-                    {/* Heading */}
+                    
                     <IonRow>
                         <IonCol className="ion-text-center categories">
                             <h3>Find Your Perfect Match</h3>
@@ -139,7 +147,7 @@ const Home: React.FC = () => {
                         </IonCol>
                     </IonRow>
 
-                    {/* First Row */}
+                    
                     <IonRow className="category1">
 
                         <IonCol size="6" size-md="3">
@@ -172,7 +180,7 @@ const Home: React.FC = () => {
 
                     </IonRow>
 
-                    {/* Second Row */}
+                    
                     <IonRow className="category2">
 
                         <IonCol size="6" size-md="3">
@@ -196,12 +204,98 @@ const Home: React.FC = () => {
                             </Link>
                         </IonCol>
 
-                        {/* View All */}
+                        
                         <IonCol size="6" size-md="3" className="view_all ion-text-center">
                             <Link to="AllProduct">
                                 <h3>10+</h3>
                                 <p>categories to choose all</p>
                                 <h4>VIEW ALL</h4>
+                            </Link>
+                        </IonCol>
+
+                    </IonRow>
+
+                </IonGrid> */}
+
+                <IonGrid className="premium-categories">
+
+                    <IonRow>
+                        <IonCol className="ion-text-center categories">
+                            <h3>Find Your Perfect Match</h3>
+                            <h2>Shop By Categories</h2>
+                        </IonCol>
+                    </IonRow>
+
+                    <IonRow>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up">
+                            <Link to="/Category/Earrings" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw32c0481a/homepage/shopByCategory/earrings-3-4-26.jpg" alt="earrings" />
+                                <div className="overlay">
+                                    <h4>EARRINGS</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up" data-aos-delay="100">
+                            <Link to="/Category/Rings" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwdd52311e/homepage/shopByCategory/ring-3-4-26.jpg" alt="rings" />
+                                <div className="overlay">
+                                    <h4>FINGER RINGS</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up" data-aos-delay="200">
+                            <Link to="/Category/Pendant" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw49078ca4/homepage/shopByCategory/pendants-3-4-26.jpg" alt="pendants" />
+                                <div className="overlay">
+                                    <h4>PENDANTS</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up" data-aos-delay="300">
+                            <Link to="/Category/Mangalsutra" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwc8444991/homepage/shopByCategory/mangalsutra-3-4-26.jpg" alt="mangalsutra" />
+                                <div className="overlay">
+                                    <h4>MANGALSUTRA</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up">
+                            <Link to="/Category/Bracelets" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw495a937b/homepage/shopByCategory/bracelets-3-4-26.jpg" alt="bracelets" />
+                                <div className="overlay">
+                                    <h4>BRACELETS</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up" data-aos-delay="100">
+                            <Link to="/Category/Bangles" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw55713d35/homepage/shopByCategory/bangles-3-4-26.jpg" alt="bangles" />
+                                <div className="overlay">
+                                    <h4>BANGLES</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="fade-up" data-aos-delay="200">
+                            <Link to="/Category/Chain" className="category-card">
+                                <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dweb159955/homepage/shopByCategory/chains-3-4-26.jpg" alt="chain" />
+                                <div className="overlay">
+                                    <h4>CHAIN</h4>
+                                </div>
+                            </Link>
+                        </IonCol>
+
+                        <IonCol size="12" size-sm="6" size-md="3" data-aos="zoom-in">
+                            <Link to="/AllProduct" className="view-all-card">
+                                <h2>10+</h2>
+                                <p>Categories</p>
+                                <span>VIEW ALL →</span>
                             </Link>
                         </IonCol>
 
@@ -294,7 +388,7 @@ const Home: React.FC = () => {
                             </div>
 
                             <div className="world_box">
-                                <Link to ="DailyWear">
+                                <Link to="DailyWear">
                                     <img src="./dailywear.png" alt="dailywear" />
                                     <h4>DAILY WEAR</h4>
                                 </Link>

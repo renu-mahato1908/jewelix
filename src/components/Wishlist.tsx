@@ -64,7 +64,7 @@ const Wishlist: React.FC = () => {
         if (!currentUser) return;
 
         axios
-            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist/user/${currentUser.id}`)
+            .get(`https://renuka-saa9.vercel.app/api/wishlist/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -107,7 +107,7 @@ const Wishlist: React.FC = () => {
         };
 
         axios
-            .post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
+            .post(`https://renuka-saa9.vercel.app/api/carts`, data)
 
             .then((response) => {
 
@@ -133,7 +133,7 @@ const Wishlist: React.FC = () => {
     const handleDelete = (id: string) => {
 
         axios
-            .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist/${id}`)
+            .delete(`https://renuka-saa9.vercel.app/api/wishlist/${id}`)
 
             .then(() => {
 
@@ -251,7 +251,7 @@ const Wishlist: React.FC = () => {
 
                                                 <IonImg
                                                     className="wishlist-img"
-                                                    src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${wishlistproduct.productId.images[0]}`}
+                                                    src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${wishlistproduct.productId.images[0]}`}
                                                 />
 
                                             )

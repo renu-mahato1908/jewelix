@@ -54,7 +54,10 @@ const SignUp: React.FC = () => {
 
   return (
     <IonPage>
+      
       <IonHeader>
+
+     
         <IonToolbar className="header-toolbar">
           <IonTitle className="header-title">
 

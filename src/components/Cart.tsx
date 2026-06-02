@@ -74,7 +74,7 @@ const Cart: React.FC = () => {
         if (currentUser?.id) {
 
             axios
-                .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`)
+                .get(`https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}`)
                 .then((response) => {
 
                     console.log(response.data);
@@ -94,7 +94,7 @@ const Cart: React.FC = () => {
     useEffect(() => {
 
         axios
-            .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts")
+            .get("https://renuka-saa9.vercel.app/api/ssproducts")
             .then((res) => {
 
                 const productMap: Record<number, Product> = {};
@@ -117,7 +117,7 @@ const Cart: React.FC = () => {
 
         axios
             .delete(
-                `https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}/item/${id}`
+                `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${id}`
             )
             .then(() => {
 
@@ -143,7 +143,7 @@ const Cart: React.FC = () => {
 
         axios
             .put(
-                `https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}/item/${productId}`,
+                `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${productId}`,
                 { quantity: newQuantity }
             )
             .then(() => {
@@ -224,7 +224,7 @@ const Cart: React.FC = () => {
                                         {products[cartItem.productId] && (
 
                                             <IonImg
-                                                src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${products[cartItem.productId]?.images?.[0]}`}
+                                                src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${products[cartItem.productId]?.images?.[0]}`}
                                             />
 
                                         )}
@@ -510,7 +510,7 @@ export default Cart;
 
 //             axios
 //                 .get(
-//                     `https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`
+//                     `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}`
 //                 )
 //                 .then((response) => {
 
@@ -539,7 +539,7 @@ export default Cart;
 
 //         axios
 //             .get(
-//                 "https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts"
+//                 "https://renuka-saa9.vercel.app/api/ssproducts"
 //             )
 //             .then((res) => {
 
@@ -574,7 +574,7 @@ export default Cart;
 
 //         axios
 //             .get(
-//                 `https://simmering-shabby-overtake.ngrok-free.dev/api/addresses/user/${currentUser.id}`
+//                 `https://renuka-saa9.vercel.app/api/addresses/user/${currentUser.id}`
 //             )
 //             .then((response) => {
 
@@ -597,7 +597,7 @@ export default Cart;
 
 //         axios
 //             .delete(
-//                 `https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}/item/${id}`
+//                 `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${id}`
 //             )
 //             .then(() => {
 
@@ -632,7 +632,7 @@ export default Cart;
 
 //         axios
 //             .put(
-//                 `https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}/item/${productId}`,
+//                 `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${productId}`,
 //                 {
 //                     quantity: newQuantity
 //                 }
@@ -774,7 +774,7 @@ export default Cart;
 //                                                     ] && (
 
 //                                                         <IonImg
-//                                                             src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${products[cartItem.productId]?.images?.[0]}`}
+//                                                             src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${products[cartItem.productId]?.images?.[0]}`}
 //                                                         />
 
 //                                                     )
@@ -1054,7 +1054,7 @@ export default Cart;
 
 //                                 axios
 //                                     .post(
-//                                         "https://simmering-shabby-overtake.ngrok-free.dev/api/addresses",
+//                                         "https://renuka-saa9.vercel.app/api/addresses",
 //                                         data
 //                                     )
 //                                     .then(

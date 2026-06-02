@@ -36,7 +36,7 @@ const Order: React.FC = () => {
     useEffect(() => {
 
         axios
-            .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders")
+            .get("https://renuka-saa9.vercel.app/api/ssorders")
             .then((response) => {
 
                 console.log("API Response:", response.data);

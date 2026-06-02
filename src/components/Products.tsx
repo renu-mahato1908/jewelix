@@ -53,7 +53,7 @@ const Products: React.FC = () => {
   // Fetch Products
   useEffect(() => {
     axios
-      .get("https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts")
+      .get("https://renuka-saa9.vercel.app/api/ssproducts")
       .then((response) => {
         setProducts(response.data);
       })
@@ -65,7 +65,7 @@ const Products: React.FC = () => {
   // Delete Product
   const handleDelete = (id: number) => {
     axios
-      .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/${id}`)
+      .delete(`https://renuka-saa9.vercel.app/api/ssproducts/${id}`)
       .then((response) => {
         console.log(response.data);
 
@@ -199,7 +199,7 @@ const Products: React.FC = () => {
                             <td>
                               <IonImg
                                 className="product-img"
-                                src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product.images[0]}`}
+                                src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${product.images[0]}`}
                                 alt="product"
                               />
                             </td>

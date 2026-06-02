@@ -38,7 +38,7 @@ const AddProduct: React.FC = () => {
   const { user: currentUser } = useSelector((state: any) => state.auth);
 
   useEffect(() => {
-    axios.get("https://simmering-shabby-overtake.ngrok-free.dev/api/cats").then((res) => {
+    axios.get("https://renuka-saa9.vercel.app/api/cats").then((res) => {
       setCategories(res.data);
     });
   }, []);
@@ -102,7 +102,7 @@ const AddProduct: React.FC = () => {
 
               try {
                 await axios.post(
-                  "https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts",
+                  "https://renuka-saa9.vercel.app/api/ssproduct",
                   formData,
                   {
                     headers: {
@@ -335,7 +335,7 @@ export default AddProduct;
 //   // ✅ Load categories
 //   useEffect(() => {
 //     axios
-//       .get("https://simmering-shabby-overtake.ngrok-free.dev/api/cats")
+//       .get("https://renuka-saa9.vercel.app/api/cats")
 //       .then((res) => setCategories(res.data))
 //       .catch((err) => console.error(err));
 //   }, []);
@@ -413,7 +413,7 @@ export default AddProduct;
 
 //               try {
 //                 const res = await axios.post(
-//                   "https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts",
+//                   "https://renuka-saa9.vercel.app/api/ssproducts",
 //                   formData
 //                 );
 

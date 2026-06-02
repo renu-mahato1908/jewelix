@@ -120,7 +120,7 @@ const Address = () => {
         setLoading(true);
 
         axios
-            .post(`https://simmering-shabby-overtake.ngrok-free.dev/api/addresses`, formData)
+            .post(`https://renuka-saa9.vercel.app/api/addresses`, formData)
 
             .then((response) => {
 
@@ -158,7 +158,7 @@ const Address = () => {
         if (!currentUser) return;
 
         axios
-            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/addresses/user/${currentUser.id}`)
+            .get(`https://renuka-saa9.vercel.app/api/addresses/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -181,7 +181,7 @@ const Address = () => {
         if (!currentUser) return;
 
         axios
-            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`)
+            .get(`https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}`)
 
             .then((response) => {
 
@@ -247,14 +247,14 @@ const Address = () => {
         };
 
         axios
-            .post("https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders", data)
+            .post("https://renuka-saa9.vercel.app/api/ssorders", data)
 
             .then((response) => {
 
                 console.log(response.data);
 
                 axios
-                    .delete(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts/user/${currentUser.id}`)
+                    .delete(`https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}`)
 
                     .then(() => {
 

@@ -52,7 +52,7 @@
 
 //         axios
 //             .get(
-//                 `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/${id}`
+//                 `https://renuka-saa9.vercel.app/api/ssorders/${id}`
 //             )
 
 //             .then((response) => {
@@ -503,7 +503,7 @@ const Invoice: React.FC = () => {
 
         axios
             .get<Order>(
-                `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/${id}`
+                `https://renuka-saa9.vercel.app/api/ssorders/${id}`
             )
 
             .then((response) => {

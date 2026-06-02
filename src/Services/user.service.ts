@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
-const API_URL = "https://simmering-shabby-overtake.ngrok-free.dev/api/test/";
+const API_URL = "https://renuka-saa9.vercel.app/api/test/";
 
 const getPublicContent = () => {
   return axios.get(API_URL + "all");

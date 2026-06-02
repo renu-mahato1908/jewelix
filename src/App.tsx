@@ -63,9 +63,14 @@ import Rings from './components/Rings';
 import Invoice from './components/Invoice';
 import Payment from './components/Payment';
 import Wedding from './components/Wedding';
+import axios from 'axios';
 
+// This applies the header to ALL axios requests across the entire app
+// axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'true';
 
 setupIonicReact();
+
+axios.defaults.withCredentials = true;
 
 const App: React.FC = () => {
   return (

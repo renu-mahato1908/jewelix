@@ -79,11 +79,9 @@ const Category = () => {
         setLoading(true);
 
         axios
-            // .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/category/${categoryName}`)
-            .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/category/${categoryName}`, {
-                headers: {
-                    'ngrok-skip-browser-warning': 'true'
-                }
+            // .get(`https://renuka-saa9.vercel.app/api/ssproducts/category/${categoryName}`)
+            .get(`https://renuka-saa9.vercel.app/api/ssproduct/category/${categoryName}`, {
+               
             })
 
             .then((response) => {
@@ -166,7 +164,7 @@ const Category = () => {
 
         axios
             .post(
-                "https://simmering-shabby-overtake.ngrok-free.dev/api/carts",
+                "https://renuka-saa9.vercel.app/api/carts",
                 data
             )
 
@@ -224,7 +222,7 @@ const Category = () => {
 
         axios
             .post(
-                "https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist",
+                "https://renuka-saa9.vercel.app/api/wishlist",
                 data
             )
 
@@ -287,7 +285,7 @@ const Category = () => {
     //         ]
     //     };
 
-    //     axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
+    //     axios.post(`https://renuka-saa9.vercel.app/api/carts`, data)
 
     //         .then((response) => {
 
@@ -321,7 +319,7 @@ const Category = () => {
 
     //     };
 
-    //     axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist`, data)
+    //     axios.post(`https://renuka-saa9.vercel.app/api/wishlist`, data)
 
     //         .then((response) => {
 
@@ -586,7 +584,7 @@ const Category = () => {
                                                 <Link to={`/ViewProduct/${product?.id}`}>
                                                     <IonImg
                                                         className="category-image"
-                                                        src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product?.images?.[0]}`}
+                                                        src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${product?.images?.[0]}`}
                                                     />
                                                 </Link>
 

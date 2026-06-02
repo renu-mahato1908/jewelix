@@ -57,7 +57,7 @@ const OrderStatus: React.FC = () => {
 
       axios
         .get(
-          `https://simmering-shabby-overtake.ngrok-free.dev/api/ssorders/user/${currentUser.id}`
+          `https://renuka-saa9.vercel.app/api/ssorders/user/${currentUser.id}`
         )
         .then((response) => {
 
@@ -249,7 +249,7 @@ const OrderStatus: React.FC = () => {
 
                                         <IonImg
                                           className="product-img"
-                                          src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${item.productId.images[0]}`}
+                                          src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${item.productId.images[0]}`}
                                           alt="product"
                                         />
 

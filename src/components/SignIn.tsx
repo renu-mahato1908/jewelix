@@ -178,15 +178,26 @@ const SignIn: React.FC = () => {
           </p>
 
           {/* ERROR */}
-          {
+          {/* {
             message && (
               <IonText color="danger">
                 <p className="msg">
+
                   {message}
                 </p>
               </IonText>
             )
-          }
+          } */}
+
+          {message && (
+            <IonText color="danger">
+              <p>
+                {typeof message === "string"
+                  ? message
+                  : message.message || "Something went wrong"}
+              </p>
+            </IonText>
+          )}
 
           {/* FORMIK */}
           <Formik
@@ -337,3 +348,24 @@ const SignIn: React.FC = () => {
 };
 
 export default SignIn;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -57,7 +57,7 @@ const ViewProduct = () => {
     setLoading(true);
 
     axios
-      .get(`https://simmering-shabby-overtake.ngrok-free.dev/api/ssproducts/${productId}`)
+      .get(`https://renuka-saa9.vercel.app/api/ssproducts/${productId}`)
 
       .then((response) => {
 
@@ -102,7 +102,7 @@ const ViewProduct = () => {
 
     };
 
-    axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/wishlist`, data)
+    axios.post(`https://renuka-saa9.vercel.app/api/wishlist`, data)
 
       .then((response) => {
 
@@ -163,7 +163,7 @@ const ViewProduct = () => {
       ]
     };
 
-    axios.post(`https://simmering-shabby-overtake.ngrok-free.dev/api/carts`, data)
+    axios.post(`https://renuka-saa9.vercel.app/api/carts`, data)
 
       .then((response) => {
 
@@ -231,7 +231,7 @@ const ViewProduct = () => {
 
                     <IonImg
                       className="product-image"
-                      src={`https://simmering-shabby-overtake.ngrok-free.dev/upload/${product?.images?.[0]}`}
+                      src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${product?.images?.[0]}`}
                     />
 
                     {/* WISHLIST */}
