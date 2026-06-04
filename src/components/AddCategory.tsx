@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -22,6 +23,8 @@ import {
     IonCard,
     IonCardContent, IonGrid, IonIcon
 } from '@ionic/react';
+import { useDispatch } from "react-redux";
+
 
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -52,12 +55,12 @@ const AddCategory: React.FC = () => {
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-      
-          if (currentUser && currentUser.roles[0] !== "ROLE_ADMIN") {
+
+        if (currentUser && currentUser.roles[0] !== "ROLE_ADMIN") {
             history.push("/Home");
-          }
-      
-        }, [history]);
+        }
+
+    }, [history]);
 
     useEffect(() => {
         axios.get("https://renuka-saa9.vercel.app/api/cats").then((response) => {
@@ -81,83 +84,93 @@ const AddCategory: React.FC = () => {
 
     }
 
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());          // Redux state clear
+        localStorage.removeItem("user");
+        history.replace("/SignIn");   // redirect to login page
+    };
+
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar color="light">
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
-                    <IonTitle>Add Category</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+
+            <Header handleLogout={handleLogout} />
+
+
 
             <IonContent className="category-bg">
 
-                <section>
-                    <div className="category-container">
 
+                <IonGrid className="category-container">
+                    <IonCol>
+                        <IonRow>
+                            <div className="category-container">
+                                <IonCard className="category-card">
+                                    <h2 className="title">Add New Category</h2>
 
+                                    <IonCardContent>
 
-                        <IonCard className="category-card">
-                            <h2 className="title">Add New Category</h2>
+                                        <p className="subtitle">Organize your jewellery collections ✨</p>
 
-                            <IonCardContent>
+                                        <Formik
+                                            initialValues={{ name: "" }}
+                                            validationSchema={Schema}
+                                            onSubmit={async (values, { resetForm }) => {
+                                                try {
+                                                    await axios.post("https://renuka-saa9.vercel.app/api/cats", values);
+                                                    alert("Category added successfully!");
+                                                    resetForm();
+                                                    history.push("/products");
+                                                } catch (err) {
+                                                    console.error(err);
+                                                    alert("Upload failed");
+                                                }
+                                            }}
+                                        >
+                                            {({ handleChange, values, touched, errors, handleSubmit }) => (
 
-                                <p className="subtitle">Organize your jewellery collections ✨</p>
+                                                <form onSubmit={handleSubmit}>
 
-                                <Formik
-                                    initialValues={{ name: "" }}
-                                    validationSchema={Schema}
-                                    onSubmit={async (values, { resetForm }) => {
-                                        try {
-                                            await axios.post("https://renuka-saa9.vercel.app/api/cats", values);
-                                            alert("Category added successfully!");
-                                            resetForm();
-                                            history.push("/products");
-                                        } catch (err) {
-                                            console.error(err);
-                                            alert("Upload failed");
-                                        }
-                                    }}
-                                >
-                                    {({ handleChange, values, touched, errors, handleSubmit }) => (
+                                                    <IonItem className="custom-input">
+                                                        <IonLabel position="stacked">Category Name</IonLabel>
+                                                        <IonInput
+                                                            name="name"
+                                                            value={values.name}
+                                                            placeholder=""
+                                                            onIonChange={handleChange}
+                                                        />
+                                                    </IonItem>
 
-                                        <form onSubmit={handleSubmit}>
+                                                    {errors.name && touched.name && (
+                                                        <IonText color="danger">
+                                                            <p className="error">{errors.name}</p>
+                                                        </IonText>
+                                                    )}
 
-                                            <IonItem className="custom-input">
-                                                <IonLabel position="stacked">Category Name</IonLabel>
-                                                <IonInput
-                                                    name="name"
-                                                    value={values.name}
-                                                    placeholder=""
-                                                    onIonChange={handleChange}
-                                                />
-                                            </IonItem>
+                                                    <IonButton
+                                                        expand="block"
+                                                        type="submit"
+                                                        className="cat-btn center-btn"
+                                                    >
+                                                        Add Category
+                                                    </IonButton>
 
-                                            {errors.name && touched.name && (
-                                                <IonText color="danger">
-                                                    <p className="error">{errors.name}</p>
-                                                </IonText>
+                                                </form>
+
                                             )}
+                                        </Formik>
 
-                                            <IonButton
-                                                expand="block"
-                                                type="submit"
-                                                className="cat-btn center-btn"
-                                            >
-                                                Add Category
-                                            </IonButton>
+                                    </IonCardContent>
+                                </IonCard>
+                            </div>
+                        </IonRow>
+                    </IonCol>
 
-                                        </form>
 
-                                    )}
-                                </Formik>
 
-                            </IonCardContent>
-                        </IonCard>
-                    </div>
-                </section>
+
+                </IonGrid>
 
 
 
@@ -166,17 +179,18 @@ const AddCategory: React.FC = () => {
 
 
 
-                <section className="table-wrapper">
+
+                {/* <div className="table-center">
                     <IonGrid className="custom-table">
 
-                        {/* Header */}
+                       
                         <IonRow className="table-header">
                             <IonCol size="2">Sl</IonCol>
                             <IonCol size="6">Name</IonCol>
                             <IonCol size="4">Delete</IonCol>
                         </IonRow>
 
-                        {/* Body */}
+                        
                         {categories.map((category: any, index: number) => (
                             <IonRow key={category.id} className="table-row">
                                 <IonCol size="2">{index + 1}</IonCol>
@@ -195,7 +209,62 @@ const AddCategory: React.FC = () => {
                         ))}
 
                     </IonGrid>
-                </section>
+                </div> */}
+
+
+                <div className="table-center">
+
+                    <IonCard className="table-card">
+
+                        <IonCardContent>
+
+                            <h2 className="table-title">
+                                Category List
+                            </h2>
+
+                            <IonGrid className="custom-table">
+
+                                <IonRow className="table-header">
+                                    <IonCol size="2">Sl</IonCol>
+                                    <IonCol size="6">Name</IonCol>
+                                    <IonCol size="4">Delete</IonCol>
+                                </IonRow>
+
+                                {categories.map((category: any, index: number) => (
+                                    <IonRow key={category.id} className="table-row">
+
+                                        <IonCol size="2">
+                                            {index + 1}
+                                        </IonCol>
+
+                                        <IonCol size="6">
+                                            {category.name}
+                                        </IonCol>
+
+                                        <IonCol size="4">
+                                            <IonButton
+                                                size="small"
+                                                className="del-btn"
+                                                onClick={() => handleDelete(category.id)}
+                                            >
+                                                <IonIcon
+                                                    icon={trashOutline}
+                                                    slot="icon-only"
+                                                />
+                                            </IonButton>
+                                        </IonCol>
+
+                                    </IonRow>
+                                ))}
+
+                            </IonGrid>
+
+                        </IonCardContent>
+
+                    </IonCard>
+
+                </div>
+
 
 
             </IonContent>

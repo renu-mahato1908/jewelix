@@ -231,7 +231,7 @@ const ViewProduct = () => {
 
                     <IonImg
                       className="product-image"
-                      src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${product?.images?.[0]}`}
+                      src={`https://renuka-saa9.vercel.app/uploads/${product?.images?.[0]}`}
                     />
 
                     {/* WISHLIST */}

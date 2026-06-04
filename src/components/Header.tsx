@@ -352,6 +352,8 @@ import "./Home.css";
 
 import { useDispatch } from "react-redux";
 import { logout } from "../Slices/auth";
+import { IonSearchbar } from '@ionic/react';
+
 
 const Header = () => {
 
@@ -443,12 +445,32 @@ const Header = () => {
                 </IonButtons>
 
                 {/* Logo */}
+                {/* <div className="header-center">
+
+                    <img
+                        src="/image.png"
+                        className="logo"
+                        alt="logo"
+                    />
+
+                </div>
+
+                <div>
+                    <IonSearchbar></IonSearchbar>
+                </div> */}
+
                 <div className="header-center">
 
                     <img
                         src="/image.png"
                         className="logo"
                         alt="logo"
+                    />
+
+                    <IonSearchbar
+                        className="header-search"
+                        placeholder="Search..."
+                        showClearButton="focus"
                     />
 
                 </div>

@@ -1,144 +1,238 @@
+/* =========================
+   PAGE BACKGROUND
+========================= */
+
 .category-bg {
-  --background: linear-gradient(135deg, #fff7f0, #fefefe);
+  --background: linear-gradient(135deg,
+      #fffaf3,
+      #f8f5ef);
 }
 
+/* =========================
+   FORM SECTION
+========================= */
+
 .category-container {
-  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+
+  width: 100%;
+  margin-top: 30px;
 }
 
 .category-card {
   width: 100%;
-  max-width: 420px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 0 auto;
+
+  border-radius: 22px;
+  background: #fff;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .08),
+    0 3px 12px rgba(212, 175, 55, .12);
 }
 
 .title {
   text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
+  color: #b8860b;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  font-family: Georgia, serif;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 14px;
   color: #888;
   margin-bottom: 20px;
 }
 
+/* INPUT */
+
 .custom-input {
+  --border-radius: 14px;
   margin-bottom: 15px;
-  border-radius: 12px;
+}
+
+.custom-input ion-input {
+  --padding-start: 10px;
+}
+
+/* BUTTON */
+
+.center-btn {
+  width: 60%;
+  margin: 20px auto;
 }
 
 .cat-btn {
-  text-align: center;
-  width: 120px;
-  margin: 10px auto;
-  --background: brown;
-  --color: white;
-  --border-radius: 20px;
-  font-size: 14px;
+  --background: linear-gradient(90deg,
+      #b8860b,
+      #d4af37);
+
+  --border-radius: 30px;
+
+  font-weight: 600;
+  letter-spacing: .5px;
 }
+
+/* ERROR */
 
 .error {
   font-size: 13px;
-  margin-left: 5px;
+  margin-top: 5px;
 }
 
+/* =========================
+   TABLE SECTION
+========================= */
 
-.center-btn {
-  display: block;
-  width: 55%;
-  margin: 20px auto;
-  --border-radius: 20px;
-  font-size: 14px;
+
+
+/* =========================
+   CARD WRAPPER
+========================= */
+
+.table-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
+.table-card {
+  width: 65%;
+  border-radius: 22px;
 
+  background: #fff;
 
+  border: 1px solid rgba(212, 175, 55, .25);
 
-.table-wrapper {
-  margin-top: 20px;
-  overflow-x: auto;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .08),
+    0 3px 12px rgba(212, 175, 55, .12);
 }
+
+/* =========================
+   TITLE
+========================= */
+
+.table-title {
+  text-align: center;
+  color: #b8860b;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   TABLE
+========================= */
 
 .custom-table {
-  width: 60%;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  padding: 0;
 }
 
 .table-header {
-  background: #8b4513;
+  background: linear-gradient(135deg,
+      #b8860b,
+      #d4af37);
+
   color: white;
   font-weight: 600;
-  text-align: center;
-  padding: 12px 0;
+  min-height: 50px;
+  border-radius: 12px;
 }
 
 .table-row {
-  border-bottom: 1px solid #eee;
-  text-align: center;
-  align-items: center;
-  min-height: 50px;
+  min-height: 55px;
+  border-bottom: 1px solid #f1f1f1;
+  transition: 0.3s ease;
 }
 
 .table-row:hover {
-  background: #faf7f2;
+  background: #fff8e7;
 }
 
-/* All columns center */
-.table-row ion-col,
-.table-header ion-col {
+.table-header ion-col,
+.table-row ion-col {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-/* Delete button */
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+/* 
 .delete-btn {
-  --background: #c62828;
-  --border-radius: 10px;
-  width: 30px;
-  height: 30px;
+  --background: #dc3545;
+  --border-radius: 50%;
+
+  width: 32px;
+  height: 32px;
+
+  min-width: 32px;
+  min-height: 32px;
 }
 
-/* Icon size */
 .delete-btn ion-icon {
-  font-size: 18px;
-  color: white;
+  font-size: 14px;
+} */
+
+/* .delete-btn {
+    --background: #dc3545;
+    --border-radius: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    min-width: 24px;
+    min-height: 24px;
+
+    margin: auto;
 }
 
+.delete-btn ion-icon {
+    font-size: 12px;
+    color: white;
+} */
 
+.del-btn {
+   --background: #fff;
+   color: red;
+    width: 26px;
+    height: 26px;
+    min-width: 16px;
+    min-height: 16px;
+}
 
+.del-btn ion-icon {
+    font-size: 18px;
+}
 
+/* =========================
+   MOBILE
+========================= */
 
+@media (max-width: 768px) {
 
+  .table-card {
+    width: 95%;
+  }
 
+  .table-title {
+    font-size: 22px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .table-row ion-col:nth-child(2) {
+    padding-left: 10px;
+  }
+}

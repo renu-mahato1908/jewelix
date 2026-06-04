@@ -251,7 +251,7 @@ const Wishlist: React.FC = () => {
 
                                                 <IonImg
                                                     className="wishlist-img"
-                                                    src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${wishlistproduct.productId.images[0]}`}
+                                                    src={`https://renuka-saa9.vercel.app/uploads/${wishlistproduct.productId.images[0]}`}
                                                 />
 
                                             )

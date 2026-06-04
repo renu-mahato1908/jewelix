@@ -22,6 +22,7 @@ import { clearMessage } from "../Slices/message";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string().min(2).max(50).required("Required"),
@@ -54,19 +55,34 @@ const SignUp: React.FC = () => {
 
   return (
     <IonPage>
-      
+
+      {/* HEADER */}
       <IonHeader>
+        <IonToolbar className="header-toolbar">
+
+          <div className="logo">
+            <img
+              src="/image.png"
+              className="logo"
+              alt="logo"
+            />
+          </div>
+
+        </IonToolbar>
+      </IonHeader>
+
+      {/* <IonHeader>
 
      
         <IonToolbar className="header-toolbar">
           <IonTitle className="header-title">
 
             <div className="logo">
-              {/* <img src="" className="logo"/> */}
+              <img src="" className="logo"/>
             </div>
           </IonTitle>
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
 
 
 
@@ -204,6 +220,11 @@ const SignUp: React.FC = () => {
                 >
                   Register
                 </IonButton>
+
+                <p>If already register?
+                  <Link to="/SignIn"> SignIn</Link>
+                 
+                </p>
 
               </form>
             )}

@@ -1,4 +1,4 @@
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact, IonToast } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
@@ -64,6 +64,9 @@ import Invoice from './components/Invoice';
 import Payment from './components/Payment';
 import Wedding from './components/Wedding';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Network } from '@capacitor/network';
+
 
 // This applies the header to ALL axios requests across the entire app
 // axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'true';
@@ -73,8 +76,55 @@ setupIonicReact();
 axios.defaults.withCredentials = true;
 
 const App: React.FC = () => {
+
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+
+
+
+
+  const [status, setStatus] = useState({});
+  useEffect(() => {
+    const logCurrentNetworkStatus = async () => {
+      const status = await Network.getStatus();
+
+      console.log("Network status:", status);
+    };
+    logCurrentNetworkStatus()
+    const statusChange = Network.addListener(
+      "networkStatusChange",
+      (status) => {
+        console.log("Network status changed", status);
+
+
+        if (status.connected) {
+          setToastMessage("Internet connected");
+        }
+
+        else {
+          setToastMessage("Disconnected");
+        }
+
+
+        setShowToast(true);
+        setStatus(status);
+
+      },
+    );
+    return () => {
+      statusChange.then(listener => listener.remove())
+    }
+  });
+
   return (
     <IonApp>
+      <IonToast
+        isOpen={showToast}
+        message={toastMessage}
+        duration={2000}
+        onDidDismiss={() => setShowToast(false)}
+      />
+
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
@@ -146,7 +196,7 @@ const App: React.FC = () => {
               <Rings />
             </Route>
 
-             <Route path="/Wedding" exact={true}>
+            <Route path="/Wedding" exact={true}>
               <Wedding />
             </Route>
 
@@ -204,8 +254,8 @@ const App: React.FC = () => {
             </Route>
 
 
-             <Route path="/Payment" exact={true}>
-              <Payment/>
+            <Route path="/Payment" exact={true}>
+              <Payment />
             </Route>
 
             <Route
@@ -231,167 +281,4 @@ export default App;
 
 
 
-// import {
-//   IonApp,
-//   IonRouterOutlet,
-//   setupIonicReact
-// } from '@ionic/react';
 
-// import { IonReactRouter } from '@ionic/react-router';
-
-// import { Redirect, Route } from 'react-router-dom';
-
-// import Menu from './components/Menu';
-
-// /* Ionic CSS */
-// import '@ionic/react/css/core.css';
-// import '@ionic/react/css/normalize.css';
-// import '@ionic/react/css/structure.css';
-// import '@ionic/react/css/typography.css';
-
-// import '@ionic/react/css/padding.css';
-// import '@ionic/react/css/float-elements.css';
-// import '@ionic/react/css/text-alignment.css';
-// import '@ionic/react/css/text-transformation.css';
-// import '@ionic/react/css/flex-utils.css';
-// import '@ionic/react/css/display.css';
-
-// import './theme/variables.css';
-
-// /* Pages */
-// import Home from './components/Home';
-// import Test from './components/Test';
-// import Example from './components/Example';
-// import AddProduct from './components/AddProduct';
-// import SignIn from './components/SignIn';
-// import SignUp from './components/SignUp';
-// import AddCategory from './components/AddCategory';
-// import Gold from './components/Gold';
-// import Diamond from './components/Diamond';
-// import Mangalsutra from './components/Mangalsutra';
-// import Bangles from './components/Bangles';
-// import Pendant from './components/Pendant';
-// import Earrings from './components/Earrings';
-// import Category from './components/Category';
-// import ViewProduct from './components/ViewProduct';
-// import Cart from './components/Cart';
-// import Wishlist from './components/Wishlist';
-// import Address from './components/Address';
-// import Dashboard from './components/Dashboard';
-// import Account from './components/Account';
-// import Order from './components/Order';
-
-// setupIonicReact();
-
-// const App: React.FC = () => {
-
-//   return (
-
-//     <IonApp>
-
-//       <IonReactRouter>
-
-//         {/* MENU */}
-//         <Menu />
-
-//         {/* IMPORTANT */}
-//         <IonRouterOutlet id="main">
-
-//           <Route exact path="/">
-//             <Redirect to="/Home" />
-//           </Route>
-
-//           <Route exact path="/Home">
-//             <Home />
-//           </Route>
-
-//           <Route exact path="/Test">
-//             <Test />
-//           </Route>
-
-//           <Route exact path="/Example">
-//             <Example />
-//           </Route>
-
-//           <Route exact path="/AddProduct">
-//             <AddProduct />
-//           </Route>
-
-//           <Route exact path="/SignIn">
-//             <SignIn />
-//           </Route>
-
-//           <Route exact path="/SignUp">
-//             <SignUp />
-//           </Route>
-
-//           <Route exact path="/AddCategory">
-//             <AddCategory />
-//           </Route>
-
-//           <Route exact path="/Category/Gold">
-//             <Gold />
-//           </Route>
-
-//           <Route exact path="/Diamond">
-//             <Diamond />
-//           </Route>
-
-//           <Route exact path="/Bangles">
-//             <Bangles />
-//           </Route>
-
-//           <Route exact path="/Mangalsutra">
-//             <Mangalsutra />
-//           </Route>
-
-//           <Route exact path="/Pendant">
-//             <Pendant />
-//           </Route>
-
-//           <Route exact path="/Earrings">
-//             <Earrings />
-//           </Route>
-
-//           <Route exact path="/Dashboard">
-//             <Dashboard />
-//           </Route>
-
-//           <Route exact path="/Category/:categoryName">
-//             <Category />
-//           </Route>
-
-//           <Route exact path="/ViewProduct/:productId">
-//             <ViewProduct />
-//           </Route>
-
-//           <Route exact path="/Cart">
-//             <Cart />
-//           </Route>
-
-//           <Route exact path="/Wishlist">
-//             <Wishlist />
-//           </Route>
-
-//           <Route exact path="/Address">
-//             <Address />
-//           </Route>
-
-//           <Route exact path="/Account">
-//             <Account />
-//           </Route>
-
-//           <Route exact path="/Order">
-//             <Order />
-//           </Route>
-
-//         </IonRouterOutlet>
-
-//       </IonReactRouter>
-
-//     </IonApp>
-
-//   );
-// };
-
-// export default App;

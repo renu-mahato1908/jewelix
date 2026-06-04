@@ -249,7 +249,7 @@ const OrderStatus: React.FC = () => {
 
                                         <IonImg
                                           className="product-img"
-                                          src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.appupload/${item.productId.images[0]}`}
+                                          src={`https://renuka-saa9.vercel.app/uploads/${item.productId.images[0]}`}
                                           alt="product"
                                         />
 
