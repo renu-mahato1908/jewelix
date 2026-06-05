@@ -81,8 +81,8 @@ const EditProduct: React.FC = () => {
     productName: Yup.string().required("Required"),
     productPrice: Yup.string().required("Required"),
     productCategory: Yup.string().required("Required"),
-    productDescription: Yup.string().required("Required"),
-    productGender: Yup.string().required("Required"),
+    // productDescription: Yup.string().required("Required"),
+    // productGender: Yup.string().required("Required"),
   });
 
   if (loading) {
@@ -113,10 +113,10 @@ const EditProduct: React.FC = () => {
                 product?.productPrice || "",
               productCategory:
                 product?.productCategory || "",
-              productDescription:
-                product?.productDescription || "",
-              productGender:
-                product?.productGender || "",
+              // productDescription:
+              //   product?.productDescription || "",
+              // productGender:
+              //   product?.productGender || "",
             }}
             validationSchema={Schema}
             onSubmit={async (
@@ -169,7 +169,7 @@ const EditProduct: React.FC = () => {
                 );
 
                 resetForm();
-                history.push("/products");
+                history.push("/Products");
               } catch (err) {
                 console.error(err);
                 alert("Update failed");
@@ -206,7 +206,7 @@ const EditProduct: React.FC = () => {
                       {touched.productName &&
                         errors.productName && (
                           <p className="error">
-                            {errors.productName}
+                            {/* {errors.productName} */}
                           </p>
                         )}
                     </IonCol>
@@ -233,7 +233,7 @@ const EditProduct: React.FC = () => {
                       {touched.productPrice &&
                         errors.productPrice && (
                           <p className="error">
-                            {errors.productPrice}
+                            {/* {errors.productPrice} */}
                           </p>
                         )}
                     </IonCol>
@@ -274,15 +274,15 @@ const EditProduct: React.FC = () => {
                       {touched.productCategory &&
                         errors.productCategory && (
                           <p className="error">
-                            {
+                            {/* {
                               errors.productCategory
-                            }
+                            } */}
                           </p>
                         )}
                     </IonCol>
                   </IonRow>
 
-                  <IonRow>
+                  {/* <IonRow>
                     <IonCol>
                       <IonItem className="custom-input">
                         <IonLabel position="stacked">
@@ -312,9 +312,9 @@ const EditProduct: React.FC = () => {
                           </p>
                         )}
                     </IonCol>
-                  </IonRow>
+                  </IonRow> */}
 
-                  <IonRow>
+                  {/* <IonRow>
                     <IonCol>
                       <IonLabel className="section-label">
                         For
@@ -353,9 +353,9 @@ const EditProduct: React.FC = () => {
                           </p>
                         )}
                     </IonCol>
-                  </IonRow>
+                  </IonRow> */}
 
-                  {product?.images?.length >
+                  {/* {product?.images?.length >
                     0 && (
                     <IonRow>
                       <IonCol>
@@ -394,9 +394,9 @@ const EditProduct: React.FC = () => {
                         </div>
                       </IonCol>
                     </IonRow>
-                  )}
+                  )} */}
 
-                  <IonRow>
+                  {/* <IonRow>
                     <IonCol>
                       <div className="upload-box">
                         <input
@@ -422,7 +422,7 @@ const EditProduct: React.FC = () => {
                         )}
                       </div>
                     </IonCol>
-                  </IonRow>
+                  </IonRow> */}
 
                   {/* Submit */}
                   <IonRow>

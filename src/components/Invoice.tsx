@@ -432,6 +432,30 @@ import Header from "../components/Header";
 
 import "./Invoice.css";
 
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import { Filesystem, Directory } from "@capacitor/filesystem";
+
+const downloadInvoice = async () => {
+    const element = targetRef.current;
+
+    const canvas = await html2canvas(element);
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+
+    const pdfBase64 = pdf.output("datauristring").split(",")[1];
+
+    await Filesystem.writeFile({
+        path: `Invoice-${Date.now()}.pdf`,
+        data: pdfBase64,
+        directory: Directory.Documents,
+    });
+
+    alert("Invoice saved successfully");
+};
+
 /* =========================
    INTERFACES
 ========================= */
@@ -582,7 +606,7 @@ const Invoice: React.FC = () => {
 
                                         {/* TITLE */}
                                         <h1 className="invoice-title">
-                                            Tanishq Jewellery
+                                            Jewelix Jewellery
                                         </h1>
 
                                         {/* ORDER */}

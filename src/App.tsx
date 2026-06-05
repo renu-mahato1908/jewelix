@@ -66,6 +66,7 @@ import Wedding from './components/Wedding';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Network } from '@capacitor/network';
+import EditProduct from './components/editProduct';
 
 
 // This applies the header to ALL axios requests across the entire app
@@ -263,6 +264,9 @@ const App: React.FC = () => {
               component={Invoice}
               exact
             />
+
+
+             <Route path="/edit-product/:id" component={EditProduct } />
 
           </IonRouterOutlet>
         </IonSplitPane>

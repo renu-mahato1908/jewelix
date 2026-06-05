@@ -468,7 +468,7 @@ const Dashboard: React.FC = () => {
                   </IonLabel>
                 </IonItem>
 
-                <IonItem routerLink="/UpdateProduct">
+                <IonItem routerLink="/EditProduct/:id">
                   <IonIcon
                     icon={createOutline}
                     slot="start"
