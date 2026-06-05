@@ -570,7 +570,7 @@
   --background: #f5f5f5;
   --border-radius: 20px;
 
-  width: 620px;
+  width: 520px;
   min-height: 36px;
   margin-left: 100px;
 }
@@ -700,5 +700,61 @@
   ion-col {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   📱 MOBILE RESPONSIVE HEADER
+========================= */
+@media (max-width: 768px) {
+
+  /* header layout stack */
+  .header-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* logo smaller */
+  .logo {
+    width: 100px;
+  }
+
+  /* search full width */
+  .header-search {
+    width: 100%;
+    margin-left: 0;
+    min-height: 34px;
+  }
+
+  /* icons tighter */
+  .header-icons {
+    gap: 6px;
+  }
+
+  /* icon size reduce */
+  .icon-box ion-icon {
+    font-size: 20px;
+  }
+
+  /* badge smaller */
+  .icon-box ion-badge {
+    font-size: 9px;
+    padding: 3px 5px;
+  }
+
+  /* dropdown fix for mobile */
+  .account-menu {
+    width: 180px;
+    left: auto;
+    right: 0;
   }
 }
