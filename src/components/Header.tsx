@@ -353,6 +353,9 @@ import "./Home.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../Slices/auth";
 import { IonSearchbar } from '@ionic/react';
+import axios from "axios";
+
+
 
 
 const Header = () => {
@@ -366,6 +369,9 @@ const Header = () => {
     const [cartCount, setCartCount] = useState(0);
 
     const [showPopover, setShowPopover] = useState(false);
+
+    const [searchText, setSearchText] = useState("");
+    const [suggestions, setSuggestions] = useState<any[]>([]);
 
     useEffect(() => {
 
@@ -431,6 +437,29 @@ const Header = () => {
         history.replace("/SignIn");
     };
 
+
+    const handleSearch = async (value: string) => {
+
+        setSearchText(value);
+
+        if (!value.trim()) {
+            setSuggestions([]);
+            return;
+        }
+
+        try {
+
+            const res = await axios.get(
+                `https://renuka-saa9.vercel.app/api/cats?name=${value}`
+            );
+
+            setSuggestions(res.data);
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
 
         <IonHeader>
@@ -444,22 +473,9 @@ const Header = () => {
 
                 </IonButtons>
 
-                {/* Logo */}
+
+
                 {/* <div className="header-center">
-
-                    <img
-                        src="/image.png"
-                        className="logo"
-                        alt="logo"
-                    />
-
-                </div>
-
-                <div>
-                    <IonSearchbar></IonSearchbar>
-                </div> */}
-
-                <div className="header-center">
 
                     <img
                         src="/image.png"
@@ -472,6 +488,66 @@ const Header = () => {
                         placeholder="Search..."
                         showClearButton="focus"
                     />
+
+                </div> */}
+
+                <div className="header-center">
+
+                    <img
+                        src="/image.png"
+                        className="logo"
+                        alt="logo"
+                    />
+
+                    {/* Search */}
+                    <div className="search-container">
+
+                        <IonSearchbar
+                            className="header-search"
+                            placeholder="Search Category..."
+                            value={searchText}
+                            debounce={300}
+                            onIonInput={(e) =>
+                                handleSearch(
+                                    e.detail.value || ""
+                                )
+                            }
+                        />
+
+                        {suggestions.length > 0 && (
+
+                            <div className="search-suggestions">
+
+                                {suggestions.map((cat: any) => (
+
+                                    <div
+                                        key={cat._id}
+                                        className="suggestion-item"
+                                        onClick={() => {
+
+                                            setSearchText(
+                                                cat.name
+                                            );
+
+                                            setSuggestions([]);
+
+                                            history.push(
+                                                `/Category/${cat.name}`
+                                            );
+                                        }}
+                                    >
+
+                                        {cat.name}
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        )}
+
+                    </div>
 
                 </div>
 

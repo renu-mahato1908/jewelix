@@ -53,7 +53,7 @@ const Products: React.FC = () => {
   // Fetch Products
   useEffect(() => {
     axios
-      .get("https://renuka-saa9.vercel.app/api/ssproducts")
+      .get("https://renuka-saa9.vercel.app/api/ssproduct")
       .then((response) => {
         setProducts(response.data);
       })
@@ -65,7 +65,7 @@ const Products: React.FC = () => {
   // Delete Product
   const handleDelete = (id: number) => {
     axios
-      .delete(`https://renuka-saa9.vercel.app/api/ssproducts/${id}`)
+      .delete(`https://renuka-saa9.vercel.app/api/ssproduct/${id}`)
       .then((response) => {
         console.log(response.data);
 
