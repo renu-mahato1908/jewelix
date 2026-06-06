@@ -224,7 +224,7 @@ const Cart: React.FC = () => {
                                         {products[cartItem.productId] && (
 
                                             <IonImg
-                                                src={`https://renuka-saa9.vercel.app/uploads/${products[cartItem.productId]?.images?.[0]}`}
+                                                src={`https://renuka-saa9.vercel.app/upload/${products[cartItem.productId]?.images?.[0]}`}
                                             />
 
                                         )}
@@ -774,7 +774,7 @@ export default Cart;
 //                                                     ] && (
 
 //                                                         <IonImg
-//                                                             src={`https://renuka-saa9.vercel.app/uploads/${products[cartItem.productId]?.images?.[0]}`}
+//                                                             src={`https://renuka-saa9.vercel.app/upload/${products[cartItem.productId]?.images?.[0]}`}
 //                                                         />
 
 //                                                     )

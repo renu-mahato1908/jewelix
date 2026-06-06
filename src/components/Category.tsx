@@ -39,13 +39,16 @@ import { useHistory } from "react-router-dom";
 import { logout } from "../Slices/auth";
 
 interface Product {
-    id: number;
-    productId: string;
-    productName: string;
-    productPrice: number;
-    productCategory: string;
-    images: string[];
-
+    id: string;
+    userId: string;
+    name: string;
+    category: string;
+    brand: string;
+    price: string;
+    image: string;
+    description: string;
+    gender: string;
+    active: boolean;
 }
 
 const Category = () => {
@@ -79,10 +82,13 @@ const Category = () => {
         setLoading(true);
 
         axios
-            // .get(`https://renuka-saa9.vercel.app/api/ssproducts/category/${categoryName}`)
-            .get(`https://renuka-saa9.vercel.app/api/ssproduct/category/${categoryName}`, {
-               
-            })
+            .get(`https://renuka-saa9.vercel.app/api/ssproduct/category/${categoryName}`
+
+                , {
+
+                })
+
+
 
             .then((response) => {
 
@@ -145,21 +151,14 @@ const Category = () => {
         }
 
         const data = {
-
             userId: currentUser.id,
-
             items: [
-
                 {
-
                     productId: product.id,
                     quantity: 1,
-                    price: product.productPrice
-
-                }
-
-            ]
-
+                    price: product.price,
+                },
+            ],
         };
 
         axios
@@ -213,11 +212,8 @@ const Category = () => {
         }
 
         const data = {
-
             userId: currentUser.id,
-
-            productId: product.id
-
+            productId: product.id,
         };
 
         axios
@@ -262,105 +258,9 @@ const Category = () => {
 
     };
 
-    // const handleCart = (product) => {
-
-    //     if (!currentUser) {
-
-    //         setToastMessage("Please login first");
-    //         setShowToast(true);
-
-    //         return;
-    //     }
-
-    //     const data = {
-
-    //         userId: currentUser.id,
-
-    //         items: [
-    //             {
-    //                 productId: product?.id,
-    //                 quantity: 1,
-    //                 price: product?.productPrice
-    //             }
-    //         ]
-    //     };
-
-    //     axios.post(`https://renuka-saa9.vercel.app/api/carts`, data)
-
-    //         .then((response) => {
-
-    //             console.log(response.data);
-
-    //             setToastMessage("Product added to cart");
-    //             setShowToast(true);
-
-    //         })
-
-    //         .catch((error) => {
-
-    //             console.log(error);
-
-    //             setToastMessage("Cart error");
-    //             setShowToast(true);
-
-    //         });
-    // };
-
-    // ================= WISHLIST =================
-
-    // const handleWishlist = (product) => {
-
-
-
-    //     const data = {
-
-    //         userId: currentUser.id,
-    //         productId: product?.id,
-
-    //     };
-
-    //     axios.post(`https://renuka-saa9.vercel.app/api/wishlist`, data)
-
-    //         .then((response) => {
-
-    //             console.log(response.data);
-
-    //             setToastMessage("Added to wishlist");
-    //             setShowToast(true);
-
-    //         })
-
-    //         .catch((error) => {
-
-    //             console.log(error);
-
-    //             if (error.response?.status === 409) {
-
-    //                 setToastMessage("Product already in wishlist");
-
-    //             }
-
-    //             else {
-
-    //                 setToastMessage("Something went wrong");
-
-    //             }
-
-    //             setShowToast(true);
-
-    //         });
-    // };
-
-    // ================= UNIQUE CATEGORY =================
 
     const uniqueCategory = [
-
-        ...new Set(
-
-            products.map(product => product?.productCategory)
-
-        )
-
+        ...new Set(products.map((product) => product.category)),
     ];
 
 
@@ -529,7 +429,7 @@ const Category = () => {
 
                     {/* ================= PRODUCTS ================= */}
 
-                    <IonRow>
+                    {/* <IonRow>
 
                         {
 
@@ -584,7 +484,7 @@ const Category = () => {
                                                 <Link to={`/ViewProduct/${product?.id}`}>
                                                     <IonImg
                                                         className="category-image"
-                                                        src={`https://renuka-saa9.vercel.app/uploads/${product?.images?.[0]}`}
+                                                        src={`https://renuka-saa9.vercel.app/upload/${product?.images?.[0]}`}
                                                     />
                                                 </Link>
 
@@ -625,9 +525,78 @@ const Category = () => {
 
                         }
 
-                    </IonRow>
+                    </IonRow> */}
+
+
 
                 </IonGrid>
+
+
+                <IonRow>
+                    {products
+                        .filter(
+                            (product) =>
+                                product.category === category ||
+                                category === "All"
+                        )
+                        .filter(
+                            (product) =>
+                                Number(product.price) >= priceRange.lower &&
+                                Number(product.price) <= priceRange.upper
+                        )
+                        .sort((a, b) => {
+                            if (sortorder === "Asc") {
+                                return Number(a.price) - Number(b.price);
+                            } else {
+                                return Number(b.price) - Number(a.price);
+                            }
+                        })
+                        .map((product, index) => (
+                            <IonCol
+                                size="12"
+                                sizeSm="6"
+                                sizeMd="4"
+                                sizeLg="3"
+                                key={index}
+                            >
+                                <IonCard className="category-card">
+                                    <div className="image-container">
+                                        <Link to={`/ViewProduct/${product.id}`}>
+                                            <IonImg
+                                                className="category-image"
+                                                src={product.image}
+                                            />
+                                        </Link>
+
+                                        <IonButton
+                                            className="wishlist-btn"
+                                            fill="solid"
+                                            onClick={() => handleWishlist(product)}
+                                        >
+                                            <FiHeart size={20} />
+                                        </IonButton>
+                                    </div>
+
+                                    <IonCardContent>
+                                        <h2>{product.name}</h2>
+
+                                        <p>Category : {product.category}</p>
+
+                                        <h3>₹ {product.price}</h3>
+
+                                        <IonButton
+                                            expand="block"
+                                            onClick={() => handleCart(product)}
+                                        >
+                                            Add To Cart
+                                        </IonButton>
+                                    </IonCardContent>
+                                </IonCard>
+                            </IonCol>
+                        ))}
+                </IonRow>
+
+
 
                 {/* ================= TOAST ================= */}
 

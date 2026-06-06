@@ -199,7 +199,7 @@ const Products: React.FC = () => {
                             <td>
                               <IonImg
                                 className="product-img"
-                                src={`https://renuka-saa9.vercel.app/uploads/${product.images[0]}`}
+                                src={`https://renuka-saa9.vercel.app/upload/${product.images[0]}`}
                                 alt="product"
                               />
                             </td>
