@@ -342,3 +342,10 @@ const ViewProduct = () => {
 };
 
 export default ViewProduct;
+
+
+
+
+
+
+

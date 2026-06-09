@@ -318,6 +318,11 @@ const Dashboard: React.FC = () => {
 
   }, []);
 
+
+
+
+
+
   // TOP SELLING PRODUCTS
 
   useEffect(() => {
@@ -386,7 +391,7 @@ const Dashboard: React.FC = () => {
 
       </IonHeader>
 
-      <IonContent  className="dashboard-container">
+      <IonContent className="dashboard-container">
 
         <IonGrid>
           <IonRow>
@@ -482,118 +487,110 @@ const Dashboard: React.FC = () => {
 
             </IonCol>
 
-            {/* RIGHT CONTENT */}
-
             <IonCol size="12" size-md="9">
+              <IonGrid>
+                <IonRow>
 
-              {/* DASHBOARD CARDS */}
+                  <IonCol size="12" size-md="3">
 
-              <IonRow>
+                    <IonCard className="dashboard-card">
 
-                <IonCol size="12" size-md="3">
+                      <IonCardContent>
 
-                  <IonCard className="dashboard-card">
+                        <h6>Total Orders</h6>
 
-                    <IonCardContent>
+                        <h2>
+                          {totalOrders}
+                        </h2>
 
-                      <h6>Total Orders</h6>
+                      </IonCardContent>
 
-                      <h2>
-                        {totalOrders}
-                      </h2>
+                    </IonCard>
 
-                    </IonCardContent>
+                  </IonCol>
 
-                  </IonCard>
+                  <IonCol size="12" size-md="3">
 
-                </IonCol>
+                    <IonCard className="dashboard-card">
 
-                <IonCol size="12" size-md="3">
+                      <IonCardContent>
 
-                  <IonCard className="dashboard-card">
+                        <h6>Total Users</h6>
 
-                    <IonCardContent>
+                        <h2>
+                          {users.totalUsers}
+                        </h2>
 
-                      <h6>Total Users</h6>
+                      </IonCardContent>
 
-                      <h2>
-                        {users.totalUsers}
-                      </h2>
+                    </IonCard>
 
-                    </IonCardContent>
+                  </IonCol>
 
-                  </IonCard>
+                  <IonCol size="12" size-md="3">
 
-                </IonCol>
+                    <IonCard className="dashboard-card">
 
-                <IonCol size="12" size-md="3">
+                      <IonCardContent>
 
-                  <IonCard className="dashboard-card">
+                        {reportSummary ? (
+                          <>
 
-                    <IonCardContent>
+                            <h6>Total Sales</h6>
 
-                      {reportSummary ? (
-                        <>
+                            <h2>
+                              ₹ {reportSummary.totalRevenue}
+                            </h2>
 
-                          <h6>Total Sales</h6>
+                          </>
+                        ) : (
+                          <IonSpinner />
+                        )}
 
-                          <h2>
-                            ₹ {reportSummary.totalRevenue}
-                          </h2>
+                      </IonCardContent>
 
-                        </>
-                      ) : (
-                        <IonSpinner />
-                      )}
+                    </IonCard>
 
-                    </IonCardContent>
+                  </IonCol>
 
-                  </IonCard>
+                  <IonCol size="12" size-md="3">
 
-                </IonCol>
+                    <IonCard className="dashboard-card">
 
-                <IonCol size="12" size-md="3">
+                      <IonCardContent>
 
-                  <IonCard className="dashboard-card">
+                        <h6>Daily Report</h6>
 
-                    <IonCardContent>
+                        {dailyReports ? (
+                          <>
 
-                      <h6>Daily Report</h6>
+                            <p>
+                              Date:
+                              {" "}
+                              {dailyReports.date}
+                            </p>
 
-                      {dailyReports ? (
-                        <>
+                            <p>
+                              Orders:
+                              {" "}
+                              {dailyReports.totalOrders}
+                            </p>
 
-                          <p>
-                            Date:
-                            {" "}
-                            {dailyReports.date}
-                          </p>
+                          </>
+                        ) : (
+                          <IonSpinner />
+                        )}
 
-                          <p>
-                            Orders:
-                            {" "}
-                            {dailyReports.totalOrders}
-                          </p>
+                      </IonCardContent>
 
-                        </>
-                      ) : (
-                        <IonSpinner />
-                      )}
+                    </IonCard>
 
-                    </IonCardContent>
+                  </IonCol>
 
-                  </IonCard>
-
-                </IonCol>
-
-              </IonRow>
-
-              {/* CHARTS */}
+                </IonRow>
+              </IonGrid>
 
               <IonRow>
-
-                {/* BAR CHART */}
-
                 <IonCol size="12" size-md="8">
 
                   <IonCard>
@@ -619,7 +616,7 @@ const Dashboard: React.FC = () => {
 
                 </IonCol>
 
-                {/* PIE CHART */}
+
 
                 <IonCol size="12" size-md="4">
 
@@ -645,10 +642,34 @@ const Dashboard: React.FC = () => {
                   </IonCard>
 
                 </IonCol>
+              </IonRow>
+            </IonCol> {/* Right Side Main Content IonCol Closed */}
+
+
+            {/* RIGHT CONTENT */}
+
+            <IonCol size="12" size-md="9">
+
+
+
+
+
+              {/* CHARTS */}
+
+              <IonRow>
+
+                {/* BAR CHART  */}
+
+
+
+
+
 
               </IonRow>
 
-              {/* TOP PRODUCTS TABLE */}
+
+
+              // {/* TOP PRODUCTS TABLE */}
 
               <IonRow>
 

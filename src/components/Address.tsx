@@ -30,6 +30,7 @@ import * as Yup from 'yup';
 
 import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Address.css';
 
@@ -45,7 +46,7 @@ interface Address {
     mobile: number;
     email: string;
     addressType: string;
-    addressId:string;
+    addressId: string;
 
 };
 
@@ -625,16 +626,18 @@ const Address = () => {
 
                                                 </IonRadioGroup>
 
-                                                <IonButton
-                                                    expand="block"
-                                                    type="submit"
-                                                    color="success"
-                                                    className="ion-margin-top"
-                                                >
+                                                <Link to="/Order">
 
-                                                    Place Order
+                                                    <IonButton
+                                                        expand="block"
+                                                        type="submit"
+                                                        color="success"
+                                                        className="ion-margin-top"
+                                                    >
 
-                                                </IonButton>
+                                                        Place Order
+
+                                                    </IonButton></Link>
 
                                             </Form>
 
@@ -668,11 +671,6 @@ const Address = () => {
 };
 
 export default Address;
-
-
-
-
-
 
 
 

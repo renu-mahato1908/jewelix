@@ -1,4 +1,6 @@
 import Header from "../components/Header";
+import Footer from '../components/Footer'
+
 
 import React, { useEffect } from "react";
 
@@ -15,7 +17,7 @@ import {
 } from '@ionic/react';
 
 import './Home.css';
-import AOS from "aos";
+import AOS from 'aos';
 import "aos/dist/aos.css";
 
 
@@ -569,12 +571,12 @@ const Home: React.FC = () => {
 
 
 
-
+{/* 
                 <section className="footer">
                     <IonGrid>
                         <IonRow>
 
-                            {/* Column 1 */}
+                          
                             <IonCol size="12" size-md="3" className="ion-text-center">
                                 <img
                                     src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwcfc0b576/images/footer/tanishq-footer-logo.svg"
@@ -587,7 +589,7 @@ const Home: React.FC = () => {
                                 />
                             </IonCol>
 
-                            {/* Column 2 */}
+                          
                             <IonCol size="12" size-md="3" className="link">
                                 <ul>
                                     <h4>Useful links</h4>
@@ -600,7 +602,7 @@ const Home: React.FC = () => {
                                 </ul>
                             </IonCol>
 
-                            {/* Column 3 */}
+                            
                             <IonCol size="12" size-md="3" className="link">
                                 <ul>
                                     <h4>Information</h4>
@@ -611,7 +613,7 @@ const Home: React.FC = () => {
                                 </ul>
                             </IonCol>
 
-                            {/* Column 4 */}
+                           
                             <IonCol size="12" size-md="3" className="link">
                                 <ul>
                                     <h4>Contact Us</h4>
@@ -651,7 +653,7 @@ const Home: React.FC = () => {
 
                         </IonRow>
                     </IonGrid>
-                </section>
+                </section> */}
 
 
 
@@ -662,6 +664,8 @@ const Home: React.FC = () => {
 
 
             </IonContent>
+
+            <Footer/>
         </IonPage >
     );
 };

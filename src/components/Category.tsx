@@ -1,5 +1,6 @@
 
 import Header from "../components/Header";
+import Footer from '../components/Footer'
 
 
 import axios from 'axios';
@@ -41,12 +42,12 @@ import { logout } from "../Slices/auth";
 interface Product {
     id: string;
     userId: string;
-    name: string;
-    category: string;
-    brand: string;
-    price: string;
+    productName: string;
+    productCategory: string;
+    
+    productPrice: string;
     image: string;
-    description: string;
+    productdescription: string;
     gender: string;
     active: boolean;
 }
@@ -156,7 +157,7 @@ const Category = () => {
                 {
                     productId: product.id,
                     quantity: 1,
-                    price: product.price,
+                    price: product.productPrice,
                 },
             ],
         };
@@ -260,7 +261,7 @@ const Category = () => {
 
 
     const uniqueCategory = [
-        ...new Set(products.map((product) => product.category)),
+        ...new Set(products.map((product) => product.productCategory)),
     ];
 
 
@@ -427,105 +428,6 @@ const Category = () => {
                         )
                     }
 
-                    {/* ================= PRODUCTS ================= */}
-
-                    {/* <IonRow>
-
-                        {
-
-                            products
-
-                                .filter(product =>
-
-                                    product?.productCategory === category ||
-
-                                    category === "All"
-
-                                )
-
-                                .filter(product =>
-
-                                    product?.productPrice >= priceRange.lower &&
-
-                                    product?.productPrice <= priceRange.upper
-
-                                )
-
-                                .sort((a, b) => {
-
-                                    if (sortorder === "Asc") {
-
-                                        return a?.productPrice - b?.productPrice;
-
-                                    }
-
-                                    else {
-
-                                        return b?.productPrice - a?.productPrice;
-
-                                    }
-
-                                })
-
-                                .map((product, index) => (
-
-                                    <IonCol
-                                        size="12"
-                                        sizeSm="6"
-                                        sizeMd="4"
-                                        sizeLg="3"
-                                        key={index}
-                                    >
-
-                                        <IonCard className="category-card">
-
-                                            <div className="image-container">
-
-                                                <Link to={`/ViewProduct/${product?.id}`}>
-                                                    <IonImg
-                                                        className="category-image"
-                                                        src={`https://renuka-saa9.vercel.app/upload/${product?.images?.[0]}`}
-                                                    />
-                                                </Link>
-
-                                                <IonButton
-                                                    className="wishlist-btn"
-                                                    fill="solid"
-                                                    onClick={() => handleWishlist(product)}
-                                                >
-                                                    <FiHeart size={20} />
-                                                </IonButton>
-
-                                            </div>
-
-                                            <IonCardContent>
-
-                                                <h2>{product?.productName}</h2>
-
-                                                <p>ID : {product?.productId}</p>
-
-                                                <h3>₹ {product?.productPrice}</h3>
-
-                                                <IonButton
-                                                    expand="block"
-                                                    onClick={() => handleCart(product)}
-                                                >
-                                                    Add To Cart
-                                                </IonButton>
-
-
-
-                                            </IonCardContent>
-
-                                        </IonCard>
-
-                                    </IonCol>
-
-                                ))
-
-                        }
-
-                    </IonRow> */}
 
 
 
@@ -536,19 +438,19 @@ const Category = () => {
                     {products
                         .filter(
                             (product) =>
-                                product.category === category ||
+                                product.productCategory === category ||
                                 category === "All"
                         )
                         .filter(
                             (product) =>
-                                Number(product.price) >= priceRange.lower &&
-                                Number(product.price) <= priceRange.upper
+                                Number(product.productPrice) >= priceRange.lower &&
+                                Number(product.productPrice) <= priceRange.upper
                         )
                         .sort((a, b) => {
                             if (sortorder === "Asc") {
-                                return Number(a.price) - Number(b.price);
+                                return Number(a.productPrice) - Number(b.productPrice);
                             } else {
-                                return Number(b.price) - Number(a.price);
+                                return Number(b.productPrice) - Number(a.productPrice);
                             }
                         })
                         .map((product, index) => (
@@ -564,7 +466,7 @@ const Category = () => {
                                         <Link to={`/ViewProduct/${product.id}`}>
                                             <IonImg
                                                 className="category-image"
-                                                src={product.image}
+                                                src={`https://renuka-saa9.vercel.app/api/upload/${product.images[0]}`}
                                             />
                                         </Link>
 
@@ -578,11 +480,11 @@ const Category = () => {
                                     </div>
 
                                     <IonCardContent>
-                                        <h2>{product.name}</h2>
+                                        <h2>{product.productName}</h2>
 
-                                        <p>Category : {product.category}</p>
+                                        <p>Category : {product.productCategory}</p>
 
-                                        <h3>₹ {product.price}</h3>
+                                        <h3>₹ {product.productPrice}</h3>
 
                                         <IonButton
                                             expand="block"
@@ -608,17 +510,12 @@ const Category = () => {
                 />
 
             </IonContent>
+            <Footer />
 
         </IonPage>
     );
 };
 
 export default Category;
-
-
-
-
-
-
 
 

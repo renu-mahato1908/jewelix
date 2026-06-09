@@ -709,8 +709,6 @@
 
 
 
-
-
 /* =========================
    📱 MOBILE RESPONSIVE HEADER
 ========================= */
@@ -719,13 +717,17 @@
   /* header layout stack */
   .header-center {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    /* center */
     gap: 8px;
   }
 
-  /* logo smaller */
+  /* logo center */
   .logo {
     width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
   }
 
   /* search full width */
@@ -733,6 +735,7 @@
     width: 100%;
     margin-left: 0;
     min-height: 34px;
+    margin-bottom: 20px;
   }
 
   /* icons tighter */

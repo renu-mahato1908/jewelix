@@ -35,14 +35,26 @@ import { Link } from "react-router-dom";
 import './Product.css';
 
 // Interface
+// interface Product {
+//   id: number;
+//   productName: string;
+//   productCategory: string;
+//   productPrice: number;
+//   productDescription: string;
+//   productGender: string;
+//   images: string[];
+// }
+
+
 interface Product {
-  id: number;
-  productName: string;
-  productCategory: string;
-  productPrice: number;
-  productDescription: string;
-  productGender: string;
-  images: string[];
+  id: string;
+  name: string;
+  category: string;
+  price: number | string;
+  description: string;
+  gender: string;
+  image: string;
+  brand?: string;
 }
 
 const Products: React.FC = () => {
@@ -194,27 +206,36 @@ const Products: React.FC = () => {
 
                             <td>{index + 1}</td>
 
-                            <td>{product.productName}</td>
+                            <td>{product.name}</td>
 
                             <td>
+                              {/* <IonImg
+                                className="product-img"
+                                src={`https://renuka-saa9.vercel.app/upload/${product.image}`}
+                                alt="product"
+                              /> */}
+
                               <IonImg
                                 className="product-img"
-                                src={`https://renuka-saa9.vercel.app/upload/${product.images[0]}`}
+                                src={product.image}
                                 alt="product"
+                                style={{ width: "50px", height: "50px", objectFit: "contain" }}
                               />
+
+
                             </td>
 
-                            <td>{product.productCategory}</td>
+                            <td>{product.category}</td>
 
                             <td>
                               <IonText color="success">
-                                ₹{product.productPrice}
+                                ₹{product.price}
                               </IonText>
                             </td>
 
-                            <td>{product.productDescription}</td>
+                            <td>{product.description}</td>
 
-                            <td>{product.productGender}</td>
+                            <td>{product.gender}</td>
 
                             <td>
                               <IonButton

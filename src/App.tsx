@@ -67,6 +67,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Network } from '@capacitor/network';
 import EditProduct from './components/EditProduct';
+import Footer from './components/Footer';
 
 
 // This applies the header to ALL axios requests across the entire app
@@ -139,6 +140,10 @@ const App: React.FC = () => {
 
             <Route path="/Home" exact={true}>
               <Home />
+            </Route>
+
+            <Route path="/Footer" exact={true}>
+              <Footer />
             </Route>
 
             <Route path="/Test" exact={true}>
