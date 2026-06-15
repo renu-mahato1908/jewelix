@@ -53,7 +53,7 @@ const Test: React.FC = () => {
 
 
     useEffect(() => {
-        axios.get<Jsr>("https://dummyjson.com/products")
+        axios.get<Jsr>("http://dummyjson.com/products")
             .then((res) => {
                 console.log(res.data);
                 setProducts(res.data.products);
@@ -76,7 +76,7 @@ const Test: React.FC = () => {
 
 
 
-            axios.get<Jsr>("https://dummyjson.com/products")
+            axios.get<Jsr>("http://dummyjson.com/products")
                 .then((res) => {
                     console.log(res.data);
                     setProducts(res.data.products);

@@ -19,7 +19,7 @@ const Gold: React.FC = () => {
         <IonToolbar className="header-toolbar">
 
           <div className="logo">
-            <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
+            <img src="http://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
           </div>
 
 
@@ -41,7 +41,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwe4bf267c/images/hi-res/510122FAAAA00_1.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwe4bf267c/images/hi-res/510122FAAAA00_1.jpg"
                   className="product-img"
                 />
 
@@ -62,7 +62,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw57f5c07f/images/hi-res/504025HMTAAA00_1.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw57f5c07f/images/hi-res/504025HMTAAA00_1.jpg"
                   className="product-img"
                 />
 
@@ -83,7 +83,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw2b44b79c/images/hi-res/515090DBQAGA00_2.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw2b44b79c/images/hi-res/515090DBQAGA00_2.jpg"
                   className="product-img"
                 />
 
@@ -110,7 +110,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4ec4effa/images/hi-res/51D3D1DMQABA00_2.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4ec4effa/images/hi-res/51D3D1DMQABA00_2.jpg"
                   className="product-img"
                 />
 
@@ -131,7 +131,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwa73dc74e/images/hi-res/51D3D1HCOABA00_2.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwa73dc74e/images/hi-res/51D3D1HCOABA00_2.jpg"
                   className="product-img"
                 />
 
@@ -152,7 +152,7 @@ const Gold: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw3b97d2e8/images/hi-res/513218PQEAAA00_1.jpg"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw3b97d2e8/images/hi-res/513218PQEAAA00_1.jpg"
                   className="product-img"
                 />
 

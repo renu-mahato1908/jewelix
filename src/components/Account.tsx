@@ -62,7 +62,7 @@
 
 
 //           <div className="logo">
-//             <img src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
+//             <img src="http://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576" className="logo" />
 //           </div>
 
 //           <IonButtons slot="end">
@@ -302,7 +302,7 @@ const Account: React.FC = () => {
                     </IonItem>
 
                     {/* Address */}
-                    <IonItem routerLink="/Addnewaddress">
+                    <IonItem routerLink="/Address">
                       <IonIcon
                         icon={locationOutline}
                         slot="start"
@@ -314,7 +314,7 @@ const Account: React.FC = () => {
                     </IonItem>
 
                     {/* Orders */}
-                    <IonItem routerLink="/Orders">
+                    <IonItem routerLink="/OrderStatus">
                       <IonIcon
                         icon={bagHandleOutline}
                         slot="start"

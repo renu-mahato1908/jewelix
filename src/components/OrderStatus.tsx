@@ -139,8 +139,8 @@ const OrderStatus: React.FC = () => {
 
     const firstImage = images[0];
 
-    // Agar database mein pehle se hi http/https wala full URL saved hai
-    if (firstImage.startsWith("http://") || firstImage.startsWith("https://")) {
+    // Agar database mein pehle se hi http/http wala full URL saved hai
+    if (firstImage.startsWith("http://") || firstImage.startsWith("http://")) {
       return firstImage;
     }
 

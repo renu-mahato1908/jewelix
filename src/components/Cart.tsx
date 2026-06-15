@@ -1,4 +1,5 @@
-
+import Header from "../components/Header";
+import Footer from '../components/Footer'
 
 import {
     IonButtons,
@@ -55,7 +56,11 @@ interface RootState {
     };
 }
 
-
+interface CartItem {
+    
+    quantity: number;
+    price: number;
+}
 
 
 const Cart: React.FC = () => {
@@ -134,19 +139,45 @@ const Cart: React.FC = () => {
     };
 
     // Quantity Update
-    const quantityUpdate = (
-        productId: number,
-        newQuantity: number
-    ) => {
 
-        if (newQuantity < 1) return;
+    // const quantityUpdate = (
+    //     productId: number,
+    //     newQuantity: number
+    // ) => {
 
-        axios
-            .put(
-                `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${productId}`,
-                { quantity: newQuantity }
-            )
-            .then(() => {
+    //     if (newQuantity < 1) return;
+
+    //     axios
+    //         .put(
+    //             `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${productId}`,
+    //             { quantity: newQuantity }
+    //         )
+    //         .then(() => {
+
+    //             setCartItems((prev) =>
+    //                 prev.map((item) =>
+    //                     item.productId === productId
+    //                         ? { ...item, quantity: newQuantity }
+    //                         : item
+    //                 )
+    //             );
+
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // };
+
+
+    const quantityUpdate = (productId: number, newQuantity: number) => {
+        console.log("Updating:", productId, newQuantity);
+
+        axios.put(
+            `https://renuka-saa9.vercel.app/api/carts/user/${currentUser.id}/item/${productId}`,
+            { quantity: newQuantity }
+        )
+            .then((res) => {
+                console.log("Success:", res.data);
 
                 setCartItems((prev) =>
                     prev.map((item) =>
@@ -155,10 +186,9 @@ const Cart: React.FC = () => {
                             : item
                     )
                 );
-
             })
             .catch((err) => {
-                console.log(err);
+                console.log("Error:", err.response?.data || err);
             });
     };
 
@@ -176,23 +206,21 @@ const Cart: React.FC = () => {
         }, 0);
     };
 
+
+
     const subTotal = calculateTotal();
+
+    const handleLogout = () => {
+        localStorage.clear();
+    };
 
     return (
 
         <IonPage>
 
-            <IonHeader>
-                <IonToolbar>
+            <Header handleLogout={handleLogout} />
 
-                    <IonButtons slot="start">
-                        <IonMenuButton />
-                    </IonButtons>
 
-                    <IonTitle>Cart</IonTitle>
-
-                </IonToolbar>
-            </IonHeader>
 
             <IonContent fullscreen className="ion-padding">
 
@@ -245,7 +273,7 @@ const Cart: React.FC = () => {
                                                     }
                                                 </h2>
 
-                                                <p>
+                                                {/* <p>
                                                     ₹ {cartItem.productDetails?.productPrice || 0}
                                                     × {cartItem.quantity}
                                                 </p>
@@ -255,6 +283,15 @@ const Cart: React.FC = () => {
                                                         (cartItem.productDetails?.productPrice || 0)
                                                         * cartItem.quantity
                                                     }
+                                                </h3> */}
+
+                                                <p>
+                                                    ₹ {cartItem.price}
+                                                    × {cartItem.quantity}
+                                                </p>
+
+                                                <h3>
+                                                    Total : ₹ {cartItem.price * cartItem.quantity}
                                                 </h3>
 
                                             </IonLabel>
@@ -347,7 +384,7 @@ const Cart: React.FC = () => {
                 </IonGrid>
 
             </IonContent>
-
+            <Footer />
         </IonPage>
     );
 };

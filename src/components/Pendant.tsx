@@ -22,7 +22,7 @@ const Pendant: React.FC = () => {
 
           <div className="logo">
             <img
-              src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576"
+              src="http://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576"
               className="logo"
             />
           </div>
@@ -46,7 +46,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw5703e4c2/images/hi-res/50DFB1PAQAAA32_2.jpg?sw=480&sh=480"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw5703e4c2/images/hi-res/50DFB1PAQAAA32_2.jpg?sw=480&sh=480"
                   className="product-img"
                 />
 
@@ -69,7 +69,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwed7e6be7/images/hi-res/512714PRIAAA00_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwed7e6be7/images/hi-res/512714PRIAAA00_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -92,7 +92,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw553be4a7/images/hi-res/51D4MGPDHAAA00_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw553be4a7/images/hi-res/51D4MGPDHAAA00_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -120,7 +120,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw7bd1fb47/images/hi-res/50K4I1PJMAAA09_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw7bd1fb47/images/hi-res/50K4I1PJMAAA09_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -143,7 +143,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw32f5d2f1/images/hi-res/50K4I1PJOAAA09_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw32f5d2f1/images/hi-res/50K4I1PJOAAA09_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -166,7 +166,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8cf46ef0/images/hi-res/512714PXBAAA00_2.jpg?sw=480&sh=480"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8cf46ef0/images/hi-res/512714PXBAAA00_2.jpg?sw=480&sh=480"
                   className="product-img"
                 />
 
@@ -194,7 +194,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw07b8265e/images/hi-res/50D5L2PBCAAA09_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw07b8265e/images/hi-res/50D5L2PBCAAA09_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -217,7 +217,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8b528970/images/hi-res/50D6VDPAIAAA09_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8b528970/images/hi-res/50D6VDPAIAAA09_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -240,7 +240,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw47addd28/images/hi-res/50D6VDPAHAAA09_2.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw47addd28/images/hi-res/50D6VDPAHAAA09_2.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -268,7 +268,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc214e02d/images/hi-res/50D5WMPAFAAA02_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc214e02d/images/hi-res/50D5WMPAFAAA02_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -291,7 +291,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw17f4dcc7/images/hi-res/50D5WXPAJAAA02_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw17f4dcc7/images/hi-res/50D5WXPAJAAA02_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 
@@ -314,7 +314,7 @@ const Pendant: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97b7a1c2/images/hi-res/50D5L2PAYAAA09_1.jpg?sw=640&sh=640"
+                  src="http://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw97b7a1c2/images/hi-res/50D5L2PAYAAA09_1.jpg?sw=640&sh=640"
                   className="product-img"
                 />
 

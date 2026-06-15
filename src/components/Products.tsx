@@ -35,27 +35,19 @@ import { Link } from "react-router-dom";
 import './Product.css';
 
 // Interface
-// interface Product {
-//   id: number;
-//   productName: string;
-//   productCategory: string;
-//   productPrice: number;
-//   productDescription: string;
-//   productGender: string;
-//   images: string[];
-// }
-
-
 interface Product {
-  id: string;
-  name: string;
-  category: string;
-  price: number | string;
-  description: string;
-  gender: string;
-  image: string;
-  brand?: string;
+  id: number;
+  productName: string;
+  productCategory: string;
+  productPrice: number;
+  productDescription: string;
+  productGender: string;
+  images: string[];
+  gender:string;
 }
+
+
+
 
 const Products: React.FC = () => {
 
@@ -206,14 +198,10 @@ const Products: React.FC = () => {
 
                             <td>{index + 1}</td>
 
-                            <td>{product.name}</td>
+                            <td>{product.productName}</td>
 
                             <td>
-                              {/* <IonImg
-                                className="product-img"
-                                src={`https://renuka-saa9.vercel.app/upload/${product.image}`}
-                                alt="product"
-                              /> */}
+                              
 
                               <IonImg
                                 className="product-img"
@@ -225,15 +213,15 @@ const Products: React.FC = () => {
 
                             </td>
 
-                            <td>{product.category}</td>
+                            <td>{product.productCategory}</td>
 
                             <td>
                               <IonText color="success">
-                                ₹{product.price}
+                                ₹{product.productPrice}
                               </IonText>
                             </td>
 
-                            <td>{product.description}</td>
+                            <td>{product.productDescription}</td>
 
                             <td>{product.gender}</td>
 
@@ -273,3 +261,4 @@ const Products: React.FC = () => {
 };
 
 export default Products;
+

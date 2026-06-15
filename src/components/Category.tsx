@@ -25,10 +25,7 @@ import {
     IonText,
     IonToast,
     IonSpinner,
-    IonHeader,
-    IonToolbar,
-    IonButtons,
-    IonMenuButton
+   
 } from '@ionic/react';
 
 import { FiHeart } from "react-icons/fi";
@@ -44,9 +41,9 @@ interface Product {
     userId: string;
     productName: string;
     productCategory: string;
-    
+
     productPrice: string;
-    image: string;
+    images: string;
     productdescription: string;
     gender: string;
     active: boolean;
@@ -464,10 +461,17 @@ const Category = () => {
                                 <IonCard className="category-card">
                                     <div className="image-container">
                                         <Link to={`/ViewProduct/${product.id}`}>
+                                           
+
                                             <IonImg
                                                 className="category-image"
-                                                src={`https://renuka-saa9.vercel.app/api/upload/${product.images[0]}`}
+                                                src={`https://renuka-saa9.vercel.app/upload/${product?.images?.[0]}`}
                                             />
+
+                                           
+
+
+
                                         </Link>
 
                                         <IonButton
@@ -517,5 +521,7 @@ const Category = () => {
 };
 
 export default Category;
+
+
 
 

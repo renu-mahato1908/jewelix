@@ -22,7 +22,7 @@ const Bangles: React.FC = () => {
 
           <div className="logo">
             <img
-              src="https://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576"
+              src="http://zerocreativity0.wordpress.com/wp-content/uploads/2016/05/tanishq-logo.jpg?w=768&h=576"
               className="logo"
               alt="logo"
             />
@@ -47,7 +47,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Gold Bangle"
                 />
@@ -71,7 +71,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Diamond Bangle"
                 />
@@ -95,7 +95,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Modern Bangle"
                 />
@@ -124,7 +124,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Traditional Bangle"
                 />
@@ -142,7 +142,7 @@ const Bangles: React.FC = () => {
             <IonCol size="12" size-md="8">
               <div className="banner-img">
                 <img
-                  src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop"
                   className="offer-img"
                   alt="Jewellery Banner"
                 />
@@ -163,7 +163,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1627293509201-cd0c780043e6?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1627293509201-cd0c780043e6?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Luxury Bangle"
                 />
@@ -187,7 +187,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1619119069152-a2b331eb392a?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1619119069152-a2b331eb392a?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Classic Bangle"
                 />
@@ -211,7 +211,7 @@ const Bangles: React.FC = () => {
                 </div>
 
                 <img
-                  src="https://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=800&auto=format&fit=crop"
+                  src="http://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=800&auto=format&fit=crop"
                   className="product-img"
                   alt="Premium Bangle"
                 />

@@ -24,7 +24,7 @@ import '@ionic/react/css/display.css';
  * Ionic Dark Mode
  * -----------------------------------------------------
  * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
+ * http://ionicframework.com/docs/theming/dark-mode
  */
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */

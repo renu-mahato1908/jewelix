@@ -18,12 +18,9 @@ import {
   IonItem,
   IonLabel,
   IonIcon,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
+
   IonSpinner,
-  IonButtons,
-  IonMenuButton
+
 } from "@ionic/react";
 
 import {
@@ -36,9 +33,10 @@ import {
   createOutline
 } from "ionicons/icons";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Dashboard.css";
+
 
 import {
   Chart as ChartJS,
@@ -377,19 +375,7 @@ const Dashboard: React.FC = () => {
 
       <Header handleLogout={handleLogout} />
 
-      <IonHeader>
 
-
-
-        <IonButtons slot="start">
-          <IonMenuButton />
-        </IonButtons>
-
-
-
-
-
-      </IonHeader>
 
       <IonContent className="dashboard-container">
 
@@ -463,11 +449,12 @@ const Dashboard: React.FC = () => {
                   </IonLabel>
                 </IonItem>
 
-                <IonItem routerLink="/OrdersDetail">
+                <IonItem  routerLink="/OrderDetail">
                   <IonIcon
                     icon={cartOutline}
                     slot="start"
                   />
+
                   <IonLabel>
                     Orders
                   </IonLabel>
@@ -755,3 +742,7 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
+
+
+
+

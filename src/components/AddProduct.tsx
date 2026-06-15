@@ -102,7 +102,7 @@ const AddProduct: React.FC = () => {
 
               try {
                 await axios.post(
-                  "https://renuka-saa9.vercel.app/api/ssproduct",
+                  "https://renuka-saa9.vercel.app/api/ssproducts",
                   formData,
                   {
                     headers: {
