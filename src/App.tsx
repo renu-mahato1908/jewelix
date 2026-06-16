@@ -57,7 +57,7 @@ import Dashboard from './components/Dashboard';
 import Account from './components/Account';
 import Order from './components/Order';
 import Products from './components/Products';
-import OrdersDetail from './components/OrderDetail';
+
 import OrderStatus from './components/OrderStatus';
 import Rings from './components/Rings';
 import Invoice from './components/Invoice';
@@ -68,6 +68,8 @@ import { useEffect, useState } from 'react';
 import { Network } from '@capacitor/network';
 import EditProduct from './components/EditProduct';
 import Footer from './components/Footer';
+import TotalUsers from './components/TotalUsers';
+import OrderDetail from './components/OrderDetail';
 
 
 // This applies the header to ALL axios requests across the entire app
@@ -159,6 +161,10 @@ const App: React.FC = () => {
               <AddProduct />
             </Route>
 
+            <Route path="/TotalUsers" exact={true}>
+              <TotalUsers />
+            </Route>
+
 
             <Route path="/SignIn" exact={true}>
               <SignIn />
@@ -245,8 +251,8 @@ const App: React.FC = () => {
               <Order />
             </Route>
 
-            <Route path="/OrdersDetail" exact={true}>
-              <OrdersDetail />
+            <Route path="/OrderDetail" exact={true}>
+              <OrderDetail />
             </Route>
 
 

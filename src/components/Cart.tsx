@@ -273,17 +273,7 @@ const Cart: React.FC = () => {
                                                     }
                                                 </h2>
 
-                                                {/* <p>
-                                                    ₹ {cartItem.productDetails?.productPrice || 0}
-                                                    × {cartItem.quantity}
-                                                </p>
-
-                                                <h3>
-                                                    Total : ₹ {
-                                                        (cartItem.productDetails?.productPrice || 0)
-                                                        * cartItem.quantity
-                                                    }
-                                                </h3> */}
+                                              
 
                                                 <p>
                                                     ₹ {cartItem.price}

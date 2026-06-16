@@ -184,7 +184,7 @@ const OrderDetail: React.FC = () => {
 
                                         <IonImg
                                           className="order-img"
-                                          src={`renuka-saa9-git-main-renu-mahato1908s-projects.vercel.app/upload/${product.productId.images[0]}`}
+                                          src={`https://renuka-saa9.vercel.app/upload/${product.productId.images[0]}`}
                                           alt="product"
                                         />
 
@@ -326,9 +326,6 @@ const OrderDetail: React.FC = () => {
 };
 
 export default OrderDetail;
-
-
-
 
 
 
