@@ -656,7 +656,7 @@ const Dashboard: React.FC = () => {
 
 
 
-              // {/* TOP PRODUCTS TABLE */}
+               {/* TOP PRODUCTS TABLE */}
 
               <IonRow>
 
